@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, Typography, createTheme } from '@mui/material';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+// import Pages
+import LandingPage from './pages/landing-page/LandingPage';
+
+const theme = createTheme({
+  palette: {
+    type: 'light',
+    primary: {
+      main: '#263238',
+    },
+    secondary: {
+      main: '#304ffe',
+    },
+    background: {
+      default: '#b0bec5',
+      paper: '#eeeeee',
+    },
+  },
+  typography: {
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 600,
+    fontFamily: 'Lato',
+  },
+});
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+    index: true,
+  },
+  {
+    path: "/employee",
+    element: <LandingPage />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Typography>
+        <RouterProvider router={router} />
+      </Typography>
+    </ThemeProvider>
   );
 }
 
