@@ -1,3 +1,46 @@
+# Mendle
+
+> What is this crap?
+
+This, my friend, is a prototype for my dumb assignment from my "Project ID" module. It is a ridiculous module that all students in my trade school.
+
+Okay, shit talk aside, I found it to be an opportunity to practice what I've learnt during my internship (I was mostly working on Front-End Development, React) and Developed this project using [React](https://https://reactjs.org/) and [MUI](https://) component library. Just look at the dependencies in `package.json` will you?
+
+It is amateur work. Amateur work that I'm proud of.
+
+> Okay seriously, what is this used for?
+
+To the best of my undestanding,
+
+_I think,_
+
+This is an app for depressed employees within a organization/company to seek help or voice out their mental-wellness needs. Anonymously.
+
+Why? The assumption was that,
+
+- it wasn't ideal for an employee to voice their concerns to peers/colleagues as it might affect their image. You know, office politics and shit.
+- okay there were more reason, I just can't remember them. _This shows how much I care about the assignment's context._
+
+The solution here is to have organizations/companies to sign up with Mendle. Once a organization/company signs up with this made up platform, employees within are allowed to be anonymously matched with a medical professional, like a psychologist, or a counsellor. Whatever, you get it.
+
+> Why is your documentation like this?
+
+I am treating this like a journal. lol
+
+# Minimal Viable Product
+
+Why do I need to determine what is minimally viable? It is because I am overkilling this by making this prototype in React. I could've just made wireframes in Figma or Adobe XD. Instead, I do this, and have a short time frame.
+Now I need to, at the very least,
+
+- **get the views working for just the employees**
+- followed by the medical professionals
+- then finally the company. The company is almost useless here. The only feature I can imagine for the company is signing up for this crap. Its anonymous man, what are they going to see.
+
+# Note to Self
+
+- routing is under `App.js`
+- there is a switch statement in `NavBar.js` that help determine which pages/settings should load for employees,
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
