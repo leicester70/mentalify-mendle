@@ -32,7 +32,7 @@ const theme = createTheme({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 600,
-    fontFamily: 'ROboto',
+    fontFamily: 'Lato',
   },
 });
 
@@ -68,7 +68,7 @@ function App() {
       <Typography>
         {isNavComponent() ? <NavBar role={`${getRole()}`} /> : null}
         <RouterProvider router={router} />
-        <Footer />
+        {isNavComponent() ? <Footer /> : null}
       </Typography>
     </ThemeProvider>
   );

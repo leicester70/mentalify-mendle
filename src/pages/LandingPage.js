@@ -1,12 +1,11 @@
 import { Container, Typography, Divider, ButtonGroup, Button, Grid } from "@mui/material";
-import "./LandingPage.css"
 
 export default function () {
     return (
         <Container
             maxWidth='sm'
             sx={{
-                marginTop: '15vh',
+                marginY: '15vh',
                 padding: '10vh',
                 bgcolor: 'background.paper',
                 boxShadow: 10
@@ -23,15 +22,15 @@ export default function () {
                 fontStyle='italic'
                 textAlign='center'>continue as
             </Typography>
-            <Grid container direction='column' alignContent='center' rowGap={1}>
+            <Grid container direction='column' alignContent='center' rowGap={1.5} paddingTop={2}>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary">Corporate Entity</Button>
+                    <Button fullWidth variant="contained" color="primary" href="/employee"><Typography>Inidividual/Employee</Typography></Button>
                 </Grid>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary">Inidividual/Employee</Button>
+                    <Button fullWidth variant="contained" color="primary" href="/corporate"><Typography>Corporate Entity</Typography></Button>
                 </Grid>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary">Medical Professional</Button>
+                    <Button fullWidth variant="contained" color="primary" href="/doctor"><Typography>Medical Professional</Typography></Button>
                 </Grid>
             </Grid>
         </Container >
