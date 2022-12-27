@@ -19,7 +19,7 @@ export default function (props) {
                 <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
             </Player>
             <Typography marginY={5}>We can't find the page you've requested for...</Typography>
-            <Button variant="contained" href={`/${props.role}`}>Return</Button>
+            <Button variant="contained" href={`/${props.role}`} size='large'><Typography>Return to Mendle</Typography></Button>
         </Container>
     );
 }
