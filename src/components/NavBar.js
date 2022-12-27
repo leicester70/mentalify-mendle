@@ -110,6 +110,7 @@ export default function (props) {
                             {settings.map((setting) => {
                                 return <MenuItem key={setting} onClick={handleCloseUserMenu} > <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem>
                             })}
+                            <Link href="/" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Toolbar>
