@@ -4,9 +4,8 @@ import { padding } from "@mui/system";
 
 export default function (props) {
     return (
-        <Container maxWidth='md' sx={{
-            paddingY: 10,
-            marginY: '10vh',
+        <Container maxWidth='X1' sx={{
+            paddingY: 20,
             backgroundColor: 'white',
             boxShadow: 10,
             alignContent: 'center',

@@ -11,8 +11,6 @@ export function getRole() {
         if (x.includes("employee")) { return "employee" }
         if (x.includes("corporate")) { return "corporate" }
         if (x.includes("doctor")) { return "doctor" }
-        let sessionData = window.sessionStorage.getItem("data")
-        return sessionData.role
     } catch (error) {
         console.log(`Helper.js, getRole() - Failed\n${error}`)
     }
