@@ -23,10 +23,12 @@ export default function () {
             minHeight: 1200,
         }
         }>
-            <Container disableGutters sx={{ paddingY: 10, md: { paddingY: 0 } }}>
-                <Box sx={{ display: "flex", backgroundImage: `url(${bannerSrc})`, backgroundSize: "cover", backgroundPosition: "bottom", minHeight: 400 }}>
+            <Container disableGutters sx={{
+                paddingY: { md: 10, sx: 0 },
+            }}>
+                <Box margin={"auto"} maxWidth="md" sx={{ display: "flex", backgroundImage: `url(${bannerSrc})`, backgroundSize: "cover", backgroundPosition: "bottom", minHeight: 400 }}>
                 </Box>
-                <Box textAlign='center' marginTop={-15} paddingBottom={5}>
+                <Box textAlign='center' marginTop={-15} paddingBottom={2}>
                     <Tooltip title="Change Avatar" >
                         <IconButton onClick={() => { setOpenAvatarList(true) }}>
                             <Avatar sx={{ width: 165, height: 165, boxShadow: 5 }} src="/avatars/1.jpg"></Avatar>
