@@ -2,13 +2,14 @@ import React from "react";
 import { AppBar, Link, Toolbar, Typography, Box, Button, Avatar, IconButton, Tooltip, Menu, MenuItem } from "@mui/material";
 import { Container, display } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu"
-import { capitalizeWords } from "../helper/FirstLetterCaps";
+import { capitalizeWords } from "../Util/Helper";
+import { randomMinMax } from "../Util/Helper";
 
 export default function (props) {
 
     // we will change this later, for now it will be either blank, or static icon
-    let avatarSrc
-
+    let avatarSrc = `avatars/${randomMinMax(1, 6)}.jpg`
+    console.log(avatarSrc)
     let { pages, settings } = []
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -22,13 +23,11 @@ export default function (props) {
         case "corporate":
             pages = ["help", "about"]
             settings = [`view ${props.role} profile`]
-
             break
 
         case "doctor":
             pages = ["conversations", "cases", "help", "about"]
             settings = [`view ${props.role} profile`]
-
             break
 
     }
@@ -40,7 +39,7 @@ export default function (props) {
     const handleCloseUserMenu = () => { setAnchorElUser(null); };
 
     return (
-        <AppBar position="static">
+        <AppBar position="sticky" className='classes.appBar'>
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -88,7 +87,7 @@ export default function (props) {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src={avatarSrc} />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -110,6 +109,7 @@ export default function (props) {
                             {settings.map((setting) => {
                                 return <MenuItem key={setting} onClick={handleCloseUserMenu} > <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem>
                             })}
+                            <Link href="/contact-us" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
                             <Link href="/" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>

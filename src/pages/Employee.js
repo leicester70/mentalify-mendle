@@ -8,17 +8,21 @@ import {
 import { Grid, Typography } from "@mui/material";
 import Dashboard from "../components/Dashboard";
 
-const Inbox = <></>
+const Conversations =
+    <Container>
+    </Container>
+
+const MakeRequest =
+    <></>
 
 export default function () {
     return (
         <Container maxWidth='x1' sx={{
-            backgroundColor: 'rgba(255, 255, 255, 0.75)',
-            paddingY: 10,
-            minHeight: 1000,
+            backgroundColor: 'rgba(255, 255, 255)',
+            minHeight: 1200,
         }}>
             <Container maxWidth='lg' disableGutters sx={{
-                boxShadow: 15,
+                paddingY: 10,
                 bgcolor: 'white',
             }}>
                 <Container>

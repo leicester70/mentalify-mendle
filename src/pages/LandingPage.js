@@ -1,4 +1,5 @@
 import { Container, Typography, Divider, ButtonGroup, Button, Grid } from "@mui/material";
+import { getRole } from "../Util/Helper";
 
 export default function () {
     return (
@@ -22,15 +23,29 @@ export default function () {
                 fontStyle='italic'
                 textAlign='center'>continue as
             </Typography>
-            <Grid container direction='column' alignContent='center' rowGap={1.5} paddingTop={2}>
+            <Grid container direction='column' alignContent='center' rowGap={1.75} paddingTop={2}>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/employee"><Typography>Inidividual/Employee</Typography></Button>
+                    <Button fullWidth variant="contained" color="primary" href="/employee"
+                        onClick={() => {
+                            window.sessionStorage.setItem("data", { role: "employee" })
+                        }}
+                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography></Button>
                 </Grid>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/corporate"><Typography>Corporate Entity</Typography></Button>
+                    <Button fullWidth variant="contained" color="primary" href="/corporate"
+                        onClick={() => {
+                            window.sessionStorage.setItem("data", { role: "corporate" })
+
+                        }}
+                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Corporate Entity</Typography></Button>
                 </Grid>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/doctor"><Typography>Medical Professional</Typography></Button>
+                    <Button fullWidth variant="contained" color="primary" href="/doctor"
+                        onClick={() => {
+                            window.sessionStorage.setItem("data", { role: "doctor" })
+
+                        }}
+                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Medical Professional</Typography></Button>
                 </Grid>
             </Grid>
         </Container >
