@@ -1,12 +1,12 @@
 import { Container } from "@mui/system";
-import NavBar from "../components/NavBar";
 
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 import { Grid, Typography } from "@mui/material";
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../components/Common/Dashboard";
+import { getEmployeeData } from "../data/DataHelper";
 
 const Conversations =
     <Container>
@@ -26,7 +26,7 @@ export default function () {
                 bgcolor: 'white',
             }}>
                 <Container>
-                    <Typography padding={5} fontFamily='Lato' variant="h4" fontStyle='italic' paddingY={10}>Welcome, dear employee...</Typography>
+                    <Typography padding={5} fontFamily='Lato' variant="h4" fontStyle='italic' paddingY={10}>Welcome, {getEmployeeData().firstName}</Typography>
                 </Container>
                 <Dashboard Messages={1} />
             </Container>

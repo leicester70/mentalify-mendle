@@ -11,12 +11,12 @@ import LandingPage from './pages/LandingPage';
 import Employee from './pages/Employee';
 import Corporate from './pages/Corporate';
 import Doctor from './pages/Doctor';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
+import NavBar from './components/Common/NavBar';
 import Profile from './pages/Profile';
 import ContactUs from './pages/ContactUs';
 import Error from './pages/Error';
 import Test from './pages/test';
+import Footer from './components/Common/Footer'
 
 const theme = createTheme({
   palette: {
