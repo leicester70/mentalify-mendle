@@ -23,6 +23,20 @@ export function capitalizeWords(str) {
     });
 }
 
+export function parseRole(role) {
+    switch (role) {
+        case "employee":
+            return "Employee"
+        case "corporate":
+            return "Corporate Company/Organization"
+        case "doctor":
+            return "Mental Health Professional"
+
+        default:
+            return "Undetermined"
+    }
+}
+
 export function randomMinMax(min, max) {
     let x = Math.random() * (max - min) + min;
     return Math.round(x)
