@@ -1,5 +1,19 @@
 import { Container, Typography, Divider, ButtonGroup, Button, Grid } from "@mui/material";
-import { getRole } from "../Util/Helper";
+import { getRole, randomMinMax } from "../Util/Helper";
+import { getEmployeeData } from "../data/DataHelper";
+
+function handleRedirect(role) {
+    if (!!window.sessionStorage.getItem("data")) { return }
+    let avatarNumber = undefined
+    let randomNumber = randomMinMax(1, 100)
+    let employee = getEmployeeData(randomNumber)
+    if (employee.gender == "Female") { avatarNumber = randomMinMax(1, 3) } else { avatarNumber = randomMinMax(4, 6) }
+    window.sessionStorage.setItem("data", JSON.stringify({
+        role: role,
+        avatarNumber: avatarNumber,
+        employeeNumber: randomNumber
+    }))
+}
 
 export default function () {
     return (
@@ -25,18 +39,18 @@ export default function () {
             </Typography>
             <Grid container direction='column' alignContent='center' rowGap={1.75} paddingTop={2}>
                 <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/employee"
-                        onClick={() => { window.sessionStorage.setItem("data", { role: "employee" }) }}
-                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography></Button>
+                    <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
+                        <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography>
+                    </Button>
                 </Grid>
-                <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/corporate"
-                        onClick={() => { window.sessionStorage.setItem("data", { role: "corporate" }) }}
-                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Corporate Entity</Typography></Button>
-                </Grid>
+                {/* <Grid item>
+                    <Button fullWidth variant="contained" color="primary" href="/corporate" onClick={() => { handleRedirect("corporate") }}>
+                        <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Corporate Entity</Typography>
+                    </Button>
+                </Grid> */}
                 <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/doctor"
-                        onClick={() => { window.sessionStorage.setItem("data", { role: "doctor" }) }}
+                        onClick={() => { handleRedirect("doctor") }}
                     ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Medical Professional</Typography></Button>
                 </Grid>
             </Grid>

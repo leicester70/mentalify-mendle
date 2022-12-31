@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AppBar, Link, Toolbar, Typography, Box, Button, Avatar, IconButton, Tooltip, Menu, MenuItem } from "@mui/material";
 import { Container, display } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu"
-import { capitalizeWords, getRole } from "../Util/Helper";
-import { randomMinMax } from "../Util/Helper";
+import { capitalizeWords, getRole } from "../../Util/Helper";
+import { getAvatarNumber } from "../../data/DataHelper";
 
 export default function (props) {
 
     // we will change this later, for now it will be either blank, or static icon
     let { pages, settings } = []
-    const [avatarSelect, setAvatarSelect] = React.useState("4");
+    const [avatarSelect, setAvatarSelect] = React.useState("0");
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+    useEffect(() => {
+        setAvatarSelect(getAvatarNumber())
+    })
 
     switch (props.role) {
         case "employee":
@@ -86,7 +90,7 @@ export default function (props) {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src={`/avatars/${avatarSelect}.jpg`} />
+                                <Avatar src={`/avatars/${avatarSelect}.jpg`} />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -106,10 +110,10 @@ export default function (props) {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => {
-                                return <Link href={`${getRole()}/profile`} underline="none"> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
+                                return <Link href={`/${getRole()}/profile`} underline="none"> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
                             })}
                             <Link href="/contact-us" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
-                            <Link href="/" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
+                            <Link href="/" underline="none" onClick={() => { window.sessionStorage.removeItem("data") }}><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Toolbar>

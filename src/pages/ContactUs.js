@@ -3,6 +3,7 @@ import {
     TextField, Input, Grid, Button, TextareaAutosize
 } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { getEmployeeData } from "../data/DataHelper";
 
 export default function (props) {
     return (
@@ -27,11 +28,11 @@ export default function (props) {
                 <Divider sx={{ marginY: 4 }}></Divider>
                 <FormControl>
                     <Box disableGutters sx={{ display: 'flex', mb: 2 }}>
-                        <TextField sx={{ mr: 2 }} label={'First Name'} />
-                        <TextField label={'Last Name'} />
+                        <TextField sx={{ mr: 2 }} label={'First Name'} value={getEmployeeData().firstName} />
+                        <TextField label={'Last Name'} value={getEmployeeData().lastName} />
                     </Box>
-                    <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Email Address'} />
-                    <TextField sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} />
+                    <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Email Address'} value={String(getEmployeeData().firstName + getEmployeeData().lastName).toLowerCase() + "@email.com"} />
+                    <TextField sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} placeholder='Let us hear from you!' />
                     {/* <Divider sx={{ marginY: 3 }}></Divider> */}
                     <Button variant="contained" color="info" sx={{ height: 65, mb: 2 }}>Submit</Button>
                     <Button variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
