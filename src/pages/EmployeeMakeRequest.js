@@ -1,5 +1,4 @@
 import { Container } from "@mui/material";
-import ContentContainer from "../components/Common/ContentContainer";
 
 export default function () {
     return (
