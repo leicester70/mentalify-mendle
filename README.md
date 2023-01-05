@@ -8,7 +8,7 @@ Okay, shit talk aside, I found it to be an opportunity to practice what I've lea
 
 It is amateur work. Amateur work that I'm proud of.
 
-Also, I am taking this chance to learn GitHub Projects, Issues, and shit like pull requests. I always see them at work and need hand holding. Like what the fuck, I want to learn how to do it too.
+Also, I am taking this chance to learn GitHub Projects, Issues, and shit like pull requests. I always see them being used at my workplace and whenever I use it, I need hand holding. Like what the fuck, I want to learn how to do it properly too (without crashing anything or wasting people time reviewing my garbage).
 
 > Okay seriously, what is this used for?
 
