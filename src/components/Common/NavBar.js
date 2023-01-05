@@ -18,6 +18,7 @@ export default function (props) {
     })
 
     switch (props.role) {
+        // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
             pages = ["conversations", "make request"]
             settings = [`view ${props.role} profile`]
@@ -68,24 +69,25 @@ export default function (props) {
                             sx={{ display: { xs: 'block', md: 'none' }, }}
                         >
                             {pages.map((page) => {
-                                let pagePath = String(page).replace(" ", "")
-                                return <MenuItem href={`/${props.role}/${pagePath}`} key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{capitalizeWords(page)}</Typography>
-                                </MenuItem>
+                                let pagePath = String(page).replace(" ", "-")
+                                return (
+                                    <Link href={`/${props.role}/${pagePath}`}><MenuItem key={page} onClick={handleCloseNavMenu}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
                             })}
                         </Menu>
                     </Box>
                     <Link sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit' underline='none'><Typography variant="h5">Mendle</Typography></Link>
                     <Box sx={{ flexGrow: 15, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
+                        {pages.map((page) => {
+                            let pagePath = String(page).replace(" ", "-")
+                            return <Button Button
+                                href={`/${props.role}/${pagePath}`}
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {capitalizeWords(page)}
                             </Button>
-                        ))}
+                        })}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">

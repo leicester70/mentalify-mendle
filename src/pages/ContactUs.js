@@ -4,6 +4,7 @@ import {
 } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { getEmployeeData } from "../data/DataHelper";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function (props) {
     return (
@@ -17,13 +18,13 @@ export default function (props) {
                 width: 'fit-content',
                 minHeight: 400,
                 // boxShadow: 15,
-                padding: 10,
+                padding: 15,
                 bgcolor: 'white',
             }}>
                 <Player autoplay loop src="https://assets5.lottiefiles.com/packages/lf20_twijbubv.json" style={{ height: 250 }}>
                     <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
                 </Player>
-                <Typography variant="h4" sx={{ my: 2 }}>Contact Us</Typography>
+                <Typography variant="h2" sx={{ my: 2 }}>Contact Us</Typography>
                 <Typography variant="subtitle1">or give us a feedback. Let us know how we can help you.</Typography>
                 <Divider sx={{ marginY: 4 }}></Divider>
                 <FormControl>
@@ -35,7 +36,7 @@ export default function (props) {
                     <TextField sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} placeholder='Let us hear from you!' />
                     {/* <Divider sx={{ marginY: 3 }}></Divider> */}
                     <Button variant="contained" color="info" sx={{ height: 65, mb: 2 }}>Submit</Button>
-                    <Button variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
+                    <Button startIcon={<ArrowBackIcon />} variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
                 </FormControl>
             </Container>
         </Container >

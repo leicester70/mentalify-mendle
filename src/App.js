@@ -17,6 +17,7 @@ import ContactUs from './pages/ContactUs';
 import Error from './pages/Error';
 import Test from './pages/test';
 import Footer from './components/Common/Footer'
+import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
 
 const theme = createTheme({
   palette: {
@@ -32,7 +33,7 @@ const theme = createTheme({
     fontWeightRegular: 300,
     fontWeightMedium: 400,
     fontWeightBold: 600,
-    fontFamily: 'Lato',
+    fontFamily: 'Century Gothic',
   },
 });
 
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
   { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
+  { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },
   { errorElement: ErrElement, path: "/corporate", element: <Corporate />, },
   { errorElement: ErrElement, path: "/doctor", element: <Doctor />, },
   { errorElement: ErrElement, path: "/contact-us", element: <ContactUs role={`${getRole()}`} />, },
