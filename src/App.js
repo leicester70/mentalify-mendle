@@ -33,7 +33,7 @@ const theme = createTheme({
     fontWeightRegular: 300,
     fontWeightMedium: 400,
     fontWeightBold: 600,
-    fontFamily: 'Lato',
+    fontFamily: 'Century Gothic',
   },
 });
 
