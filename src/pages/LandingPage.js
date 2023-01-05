@@ -23,7 +23,7 @@ export default function () {
                 marginY: '15vh',
                 padding: '10vh',
                 bgcolor: 'background.paper',
-                boxShadow: 10
+                boxShadow: 2
             }}>
             <Typography textAlign='center'>
                 <Typography variant="h5">Welcome to,</Typography>
@@ -37,7 +37,7 @@ export default function () {
                 fontStyle='italic'
                 textAlign='center'>continue as
             </Typography>
-            <Grid container direction='column' alignContent='center' rowGap={1.75} paddingTop={2}>
+            <Grid container direction='column' alignContent='center' rowGap={2} paddingTop={2}>
                 <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
                         <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography>
