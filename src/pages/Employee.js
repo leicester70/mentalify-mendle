@@ -35,14 +35,6 @@ export default function () {
                                     bodyText="Tap or click here to view your inbox!"
                                 />
                             </Grid>
-                            <Grid item flexGrow={1}>
-                                <SingleActionCard path='inbox'
-                                    lottiePlayerBgColor='rgb(243, 223, 209)'
-                                    lottiePlayerSrc='https://assets8.lottiefiles.com/packages/lf20_xZXFso.json'
-                                    headerText='Inbox'
-                                    bodyText="Tap or click here to view your inbox!"
-                                />
-                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
