@@ -9,11 +9,13 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 // Import Data
 import { getAvatarNumber, getEmployeeData } from "../data/DataHelper";
+import Singpass from "../components/SimpleComponents/Singpass";
 
 export default function () {
 
     // States
     const [openAvatarList, setOpenAvatarList] = useState(false);
+    const [singpassStep, setSingpassStep] = useState(0);
 
     // Data
     let employee = getEmployeeData()
@@ -93,6 +95,18 @@ export default function () {
                         </Grid>
                     </Grid>
                 </Container>
+                {
+                    switch (singpassStep) {
+                        case 1:
+                return(<)
+                break;
+
+                default:
+                break;
+                    }
+                }
+                <Box my={10} boxShadow={5} borderRadius={10} overflow='hidden'>
+                </Box>
             </Container>
         </Container>
     );
