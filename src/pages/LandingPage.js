@@ -1,6 +1,7 @@
-import { Container, Typography, Divider, ButtonGroup, Button, Grid } from "@mui/material";
+import { Container, Typography, Divider, Link, Grid, Button } from "@mui/material";
 import { getRole, randomMinMax } from "../Util/Helper";
 import { getEmployeeData } from "../data/DataHelper";
+import SingpassLoginButton from "../components/SimpleComponents/SingpassLoginButton";
 
 function handleRedirect(role) {
     if (!!window.sessionStorage.getItem("data")) { return }
@@ -38,21 +39,24 @@ export default function () {
                 textAlign='center'>continue as
             </Typography>
             <Grid container direction='column' alignContent='center' rowGap={2} paddingTop={2}>
-                <Grid item>
+                <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect("employee") }}>
+                    <SingpassLoginButton role="employee" />
+                </Button>
+                {/* <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
                         <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography>
                     </Button>
-                </Grid>
+                </Grid> */}
                 {/* <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/corporate" onClick={() => { handleRedirect("corporate") }}>
                         <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Corporate Entity</Typography>
                     </Button>
                 </Grid> */}
-                <Grid item>
+                {/* <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/doctor"
                         onClick={() => { handleRedirect("doctor") }}
                     ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Medical Professional</Typography></Button>
-                </Grid>
+                </Grid> */}
             </Grid>
         </Container >
     );

@@ -9,7 +9,6 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 // Import Data
 import { getAvatarNumber, getEmployeeData } from "../data/DataHelper";
-import Singpass from "../components/SimpleComponents/Singpass";
 
 export default function () {
 
@@ -27,8 +26,6 @@ export default function () {
         corporate: "",
         doctor: ""
     }
-
-    // Custom Elements
 
     function GenderBubble(props) {
         const { gender } = props
@@ -95,16 +92,7 @@ export default function () {
                         </Grid>
                     </Grid>
                 </Container>
-                {
-                    switch (singpassStep) {
-                        case 1:
-                return(<)
-                break;
-
-                default:
-                break;
-                    }
-                }
+                <></>
                 <Box my={10} boxShadow={5} borderRadius={10} overflow='hidden'>
                 </Box>
             </Container>
