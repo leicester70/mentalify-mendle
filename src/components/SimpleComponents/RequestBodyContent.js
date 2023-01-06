@@ -3,7 +3,6 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player"
 
 export default function (props) {
     const { direction, lottieSrc, lottiePlayerSize, headingText, bodyText, buttonText, buttonHref } = props
-
     switch (direction) {
         case "right":
             return (
@@ -17,7 +16,7 @@ export default function (props) {
                                 <Typography variant="body1" sx={{ mt: 2, mb: 6 }}>
                                     {bodyText}
                                 </Typography>
-                                <Button size="large" href={buttonHref} variant="contained" color="secondary"><Typography fontWeight='bold'>{buttonText}</Typography></Button>
+                                <Button size="large" href={`/${buttonHref}`} variant="contained" color="secondary"><Typography fontWeight='bold'>{buttonText}</Typography></Button>
                             </Box>
                         </Grid>
                         <Grid flexGrow={5} item padding={1}>
