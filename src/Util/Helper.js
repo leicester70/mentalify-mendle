@@ -13,6 +13,7 @@ export function isNavComponent() {
 }
 
 export function getRole() {
+    if (!!window.sessionStorage.data) { return JSON.parse(window.sessionStorage.data)["role"]; }
     try {
         let x = window.location.href.split("/")
         if (x.includes("employee")) { return "employee" }

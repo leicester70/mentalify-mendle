@@ -8,6 +8,7 @@ import { isNavComponent, getRole } from './Util/Helper';
 
 // import Pages
 import LandingPage from './pages/LandingPage';
+import SingpassFakePage from './components/SimpleComponents/SingpassFakePage';
 import Employee from './pages/Employee';
 import Corporate from './pages/Corporate';
 import Doctor from './pages/Doctor';
@@ -40,6 +41,7 @@ const theme = createTheme({
 const ErrElement = <Error role={`${getRole()}`} />
 const router = createBrowserRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
+  { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
   { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
   { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },

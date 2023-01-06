@@ -3,6 +3,18 @@ import { Button, Container, Typography } from "@mui/material";
 import { padding } from "@mui/system";
 
 export default function (props) {
+    const { role } = props
+    console.log(role)
+    let redirect = "";
+    switch (role) {
+        case "undefined":
+            redirect = "/"
+            break;
+
+        default:
+            redirect = `/${props.role}`
+            break;
+    }
     return (
         <Container maxWidth='X1' sx={{
             paddingY: 20,
@@ -18,7 +30,7 @@ export default function (props) {
                 <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
             </Player>
             <Typography marginY={5}>We can't find the page you've requested for...</Typography>
-            <Button variant="contained" href={`/${props.role}`} size='large'><Typography>Return to Mendle</Typography></Button>
+            <Button variant="contained" href={redirect} size='large'><Typography>Return to Mendle</Typography></Button>
         </Container>
     );
 }

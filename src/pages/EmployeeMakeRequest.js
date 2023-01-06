@@ -3,7 +3,7 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Typography, Divider, FormControl, Box, TextField, Button } from "@mui/material";
 import { getEmployeeData } from "../data/DataHelper";
 import Employee from "./Employee";
-import BodyContent from "../components/SimpleComponents/BodyContent";
+import RequestBodyContent from "../components/SimpleComponents/RequestBodyContent";
 
 const issuesCategories = [
     'Oliver Hansen',
@@ -41,31 +41,23 @@ export default function () {
                 </Box>
                 <Divider sx={{ marginY: 8 }}></Divider>
 
-                <BodyContent
+                <RequestBodyContent
                     lottieSrc="https://assets2.lottiefiles.com/packages/lf20_1ef7g2lw.json" lottiePlayerSize="220pt"
                     headingText="Pair up with a Psychologist"
                     bodyText="Sample Text Body"
                     buttonText="Receive Assistance"
+                    buttonHref="/singpass-login"
                 >
-                </BodyContent>
+                </RequestBodyContent>
                 <Divider sx={{ marginY: 8 }}></Divider>
-                <BodyContent
+                <RequestBodyContent
                     lottieSrc="https://assets6.lottiefiles.com/packages/lf20_tulr8tag.json" lottiePlayerSize="200pt"
                     headingText="Workplace Buddies"
                     bodyText="Match with Buddies"
                     buttonText="Find a Buddy"
+                    buttonHref="/singpass-login"
                 >
-                </BodyContent>
-
-
-                {/* <FormControl>
-                    <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Email Address'} value={String(getEmployeeData().firstName + getEmployeeData().lastName).toLowerCase() + `@${getEmployeeData().company.toLowerCase()}.com`} />
-                    <TextField sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} placeholder='Let us hear from you!' />
-                    <Button variant="contained" color="info" sx={{ height: 65, mb: 2 }}>Submit</Button>
-                    <Button variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
-                </FormControl> */}
-
-
+                </RequestBodyContent>
             </Container>
         </Container>
     );

@@ -14,6 +14,7 @@ export default function () {
 
     // States
     const [openAvatarList, setOpenAvatarList] = useState(false);
+    const [singpassStep, setSingpassStep] = useState(0);
 
     // Data
     let employee = getEmployeeData()
@@ -25,8 +26,6 @@ export default function () {
         corporate: "",
         doctor: ""
     }
-
-    // Custom Elements
 
     function GenderBubble(props) {
         const { gender } = props
@@ -93,6 +92,9 @@ export default function () {
                         </Grid>
                     </Grid>
                 </Container>
+                <></>
+                <Box my={10} boxShadow={5} borderRadius={10} overflow='hidden'>
+                </Box>
             </Container>
         </Container>
     );
