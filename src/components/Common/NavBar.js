@@ -20,7 +20,7 @@ export default function (props) {
     switch (props.role) {
         // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
-            pages = ["conversations", "make request"]
+            pages = ["conversations", "promotions", "make request"]
             settings = [`view ${props.role} profile`]
             break
 
@@ -71,11 +71,11 @@ export default function (props) {
                             {pages.map((page) => {
                                 let pagePath = String(page).replace(" ", "-")
                                 return (
-                                    <Link href={`/${props.role}/${pagePath}`}><MenuItem key={page} onClick={handleCloseNavMenu}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
+                                    <Link underline='none' href={`/${props.role}/${pagePath}`}><MenuItem key={page} onClick={handleCloseNavMenu}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
                             })}
                         </Menu>
                     </Box>
-                    <Link sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit' underline='none'><Typography variant="h5">Mendle</Typography></Link>
+                    <Link underline='none' sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit'><Typography variant="h5">Mendle</Typography></Link>
                     <Box sx={{ flexGrow: 15, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => {
                             let pagePath = String(page).replace(" ", "-")
@@ -112,10 +112,10 @@ export default function (props) {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => {
-                                return <Link href={`/${getRole()}/profile`} underline="none"> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
+                                return <Link underline='none' href={`/${getRole()}/profile`}> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
                             })}
-                            <Link href="/contact-us" underline="none"><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
-                            <Link href="/" underline="none" onClick={() => { window.sessionStorage.removeItem("data") }}><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
+                            <Link underline='none' href="/contact-us" ><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
+                            <Link underline='none' href="/" onClick={() => { window.sessionStorage.removeItem("data") }}><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Toolbar>
