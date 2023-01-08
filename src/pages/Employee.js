@@ -1,5 +1,5 @@
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography, Divider } from "@mui/material";
 import { getEmployeeData } from "../data/DataHelper";
 import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 
@@ -12,9 +12,11 @@ export default function () {
             <Container maxWidth='lg' sx={{
                 paddingY: 10,
             }}>
+                <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
+                {/* Dashboard Stuff & Service */}
                 <Grid container>
                     <Grid container item md={8} sx={12}>
-                        <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
+                        yes
                     </Grid>
                     <Grid container item md={4} sx={12}>
                         <Grid container direction='column' alignContent='left' rowGap={2} paddingTop={2}>
@@ -38,6 +40,9 @@ export default function () {
                         </Grid>
                     </Grid>
                 </Grid>
+                {/* Featured Articles */}
+                <Typography mt={20} variant="h4">Featured Articles</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
             </Container>
         </Container >
 
