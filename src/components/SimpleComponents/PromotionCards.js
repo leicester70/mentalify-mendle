@@ -7,7 +7,7 @@ import { margin } from "@mui/system";
 export default function PromotionCards(props) {
     const { ...renderLimit } = props
 
-    const textOverflowWrap = ({ vh = '10vh' }) => {
+    const textOverflowWrap = ({ vh = '10px' }) => {
         return {
             whiteSpace: 'wrap',
             overflow: 'hidden',
@@ -17,12 +17,12 @@ export default function PromotionCards(props) {
     }
 
     return (
-        <Grid container direction='row' alignContent='left' rowGap={4}>
+        <Grid container alignContent='space-around' spacing={5}>
             {
                 promotionJson.map((promotion) => {
                     return (
-                        <Grid item margin={1} flexGrow={1} md={4} xs={12}>
-                            <Card>
+                        <Grid item flexGrow={1} md={6} xs={12}>
+                            <Card sx={{ minHeight: 700 }}>
                                 <CardMedia sx={{ height: 400 }} image={promotion.imageSrc} />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div" sx={textOverflowWrap('2vh')}>{promotion.headingText}</Typography>
