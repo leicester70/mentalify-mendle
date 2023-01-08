@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, Divider } from "@mui/material";
+import { Container, Link, Box, Grid, Typography, Divider } from "@mui/material";
 import { getEmployeeData } from "../data/DataHelper";
 
 //  Custom Components
@@ -53,6 +53,9 @@ export default function Employees() {
                 <Typography mt={20} variant="h4">Featured Promotions</Typography>
                 <Divider sx={{ marginTop: 6, marginBottom: 8, backgroundColor: 'grey', opacity: '50%' }} />
                 <PromotionCards renderLimit={3} />
+                <Box my={4}>
+                    <Link color='secondary' href="employee/promotions">See all Promotions</Link>
+                </Box>
             </Container>
         </Container >
 
