@@ -11,8 +11,9 @@ export default function Employees() {
             backgroundColor: 'rgba(255, 255, 255)',
             minHeight: 2000,
         }}>
-            <Container maxWidth='lg' sx={{
-                paddingY: 10,
+            <Container disableGutters maxWidth='lg' sx={{
+                paddingTop: 10,
+                paddingBottom: 25,
             }}>
                 <Typography mt={5} variant="h4">Dashboard</Typography>
                 <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
@@ -50,7 +51,7 @@ export default function Employees() {
 
                 {/* Featured Promotion */}
                 <Typography mt={20} variant="h4">Featured Promotions</Typography>
-                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                <Divider sx={{ marginTop: 6, marginBottom: 8, backgroundColor: 'grey', opacity: '50%' }} />
                 <PromotionCards renderLimit={3} />
             </Container>
         </Container >
