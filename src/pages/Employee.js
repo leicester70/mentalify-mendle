@@ -1,22 +1,25 @@
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Container, Grid, Typography, Divider } from "@mui/material";
 import { getEmployeeData } from "../data/DataHelper";
-import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 
-export default function () {
+//  Custom Components
+import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
+import PromotionCards from "../components/SimpleComponents/PromotionCards";
+
+export default function Employees() {
     return (
         <Container maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',
-            minHeight: 1200,
+            minHeight: 2000,
         }}>
             <Container maxWidth='lg' sx={{
                 paddingY: 10,
             }}>
-                <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
+                <Typography mt={5} variant="h4">Dashboard</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
                 {/* Dashboard Stuff & Service */}
                 <Grid container>
                     <Grid container item md={8} sx={12}>
-                        yes
+                        <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
                     </Grid>
                     <Grid container item md={4} sx={12}>
                         <Grid container direction='column' alignContent='left' rowGap={2} paddingTop={2}>
@@ -43,6 +46,12 @@ export default function () {
                 {/* Featured Articles */}
                 <Typography mt={20} variant="h4">Featured Articles</Typography>
                 <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+
+
+                {/* Featured Promotion */}
+                <Typography mt={20} variant="h4">Featured Promotions</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                <PromotionCards renderLimit={3} />
             </Container>
         </Container >
 
