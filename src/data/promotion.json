@@ -1,0 +1,42 @@
+[
+    {
+        "headingText": "HomYoga Unlimited Membership",
+        "bodyText": "10% discount off in house workshops. Easiest and most effective way for you to begin or maintain a consistent yoga practice. You become part of an amazing and supportive community of students and teachers.",
+        "vendor": "HomYoga",
+        "startDate": "nil",
+        "endDate": "nil",
+        "imageSrc": "https://cdn.shopify.com/s/files/1/1184/8924/products/Gwen14_1a7116f5-9176-49e0-a372-d4be9d5c3ede_700x.jpg?v=1669814653"
+    },
+    {
+        "headingText": "Space 2B",
+        "bodyText": "more than just a wellness studio-we are a dedicated collective of mindfulness mentors who believe in the power of meditation and sound to transform your life and your work from the inside out.",
+        "vendor": "Yoga Alliance",
+        "startDate": "",
+        "endDate": "",
+        "imageSrc": ""
+    },
+    {
+        "headingText": "Revolution Singapore",
+        "bodyText": "Spin class promotions of up to 20% off classes.6 classes for $99.",
+        "vendor": "SAFRA",
+        "startDate": "1-Sep-22",
+        "endDate": "31-Dec-23",
+        "imageSrc": " https://safra-resources.azureedge.net/media-library/images/default-source/default-album/safra-website-(300x210).png?sfvrsn=5d0df8a4_0"
+    },
+    {
+        "headingText": "Jal Yoga",
+        "bodyText": "Yoga, Pilates & Barre classes between $14 to $25 per class.",
+        "vendor": "Jal Yoga",
+        "startDate": "",
+        "endDate": "",
+        "imageSrc": "https://www.jalyoga.com.sg/wp-content/uploads/2022/11/2-1280x768.png"
+    },
+    {
+        "headingText": "Fitness First",
+        "bodyText": "15% discount off all full purchase price. Promo code: FITNESSFIRST15. Terms & Conditions",
+        "vendor": "Fitness First",
+        "startDate": "20-Jan-23",
+        "endDate": "31-Aug-23",
+        "imageSrc": "https://www.fitnessfirst.com.sg/-/media/project/evolution-wellness/fitness-first/south-east-asia/singapore/blog/5-reasons-to-work-out-in-the-morning/5-reasons-to-work-out-in-the-morning-tile.jpg"
+    }
+]
