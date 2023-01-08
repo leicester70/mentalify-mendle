@@ -7,15 +7,15 @@ export default function () {
     let role = getRole()
     setInterval(() => { { window.location.replace(`/${role}`); } }, randomMinMax(2200, 6000));
     return (
-        <Container maxWidth='x1' sx={{
+        <Container disableGutters maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',
-            py: 10,
+            py: 7.5,
             minHeight: 1200,
             overflow: 'hidden'
         }}>
             <Typography variant="h4" mt={4} textAlign='center'>Authenticating</Typography>
             <Box>
-                <Player autoplay loop src="https://assets7.lottiefiles.com/packages/lf20_usmfx6bp.json" style={{ width: 300 }}>
+                <Player autoplay loop src="https://assets7.lottiefiles.com/packages/lf20_usmfx6bp.json" style={{ width: '12.5vw' }}>
                     <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
                 </Player>
             </Box>
