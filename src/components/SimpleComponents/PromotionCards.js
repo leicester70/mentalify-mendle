@@ -2,18 +2,17 @@ import { Card, CardContent, Typography, CardMedia, Divider, Grid } from "@mui/ma
 
 // import Promotion JSON Data
 import promotionJson from "../../data/promotion.json"
-console.log(promotionJson)
 
 export default function PromotionCards(props) {
     const { ...renderLimit } = props
 
     return (
-        <Grid container>
+        <Grid container direction='column' alignContent='left' rowGap={2} paddingTop={2}>
             {
                 promotionJson.map((promotion) => {
                     return (
-                        <Grid container item sx={4} >
-                            <Card sx={{}}>
+                        <Grid item flexGrow={1}>
+                            <Card>
                                 <CardMedia sx={{ height: 400 }} image={promotion.imageSrc} />
                                 <CardContent>
                                     <Typography variant="subtitle1" color="text.secondary">{promotion.vendor}</Typography>
