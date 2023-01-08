@@ -1,11 +1,19 @@
-import { Card, CardContent, Typography, CardMedia, Divider, Grid } from "@mui/material";
+import { Card, CardContent, Typography, CardMedia, Divider, Grid, Link } from "@mui/material";
 
 // import Promotion JSON Data
 import promotionJson from "../../data/promotion.json"
-import { margin } from "@mui/system";
+import { getRole } from "../../Util/Helper";
 
 export default function PromotionCards(props) {
     const { ...renderLimit } = props
+
+    if (!!renderLimit) {
+        try {
+            promotionJson = promotionJson.slice(0, props.renderLimit)
+        } catch (error) {
+            console.log("PromotionCards.js | Warning \n renderLimit ignored... \n" + error)
+        }
+    }
 
     const textOverflowWrap = ({ vh = '10px' }) => {
         return {
