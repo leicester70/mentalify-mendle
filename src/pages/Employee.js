@@ -1,17 +1,24 @@
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Link, Box, Grid, Typography, Divider } from "@mui/material";
 import { getEmployeeData } from "../data/DataHelper";
-import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 
-export default function () {
+//  Custom Components
+import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
+import PromotionCards from "../components/SimpleComponents/PromotionCards";
+import ArticleCards from "../components/SimpleComponents/ArticleCards";
+
+export default function Employees() {
     return (
         <Container maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',
-            minHeight: 1200,
+            minHeight: 2000,
         }}>
-            <Container maxWidth='lg' sx={{
-                paddingY: 10,
+            <Container disableGutters maxWidth='lg' sx={{
+                paddingTop: 10,
+                paddingBottom: 25,
             }}>
+                <Typography mt={5} variant="h4">Dashboard</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                {/* Dashboard Stuff & Service */}
                 <Grid container>
                     <Grid container item md={8} sx={12}>
                         <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
@@ -38,6 +45,21 @@ export default function () {
                         </Grid>
                     </Grid>
                 </Grid>
+                {/* Featured Articles */}
+                <Typography mt={20} variant="h4">Featured Articles</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                <ArticleCards renderLimit={3} />
+                <Box my={4}>
+                    <Link color='secondary' href="employee/articles">See all Articles & Blogs</Link>
+                </Box>
+
+                {/* Featured Promotion */}
+                <Typography mt={20} variant="h4">Featured Promotions</Typography>
+                <Divider sx={{ marginTop: 6, marginBottom: 8, backgroundColor: 'grey', opacity: '50%' }} />
+                <PromotionCards renderLimit={3} />
+                <Box my={4}>
+                    <Link color='secondary' href="employee/promotions">See all Promotions</Link>
+                </Box>
             </Container>
         </Container >
 

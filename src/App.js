@@ -8,16 +8,19 @@ import { isNavComponent, getRole } from './Util/Helper';
 
 // import Pages
 import LandingPage from './pages/LandingPage';
+import SingpassFakePage from './components/SimpleComponents/SingpassFakePage';
 import Employee from './pages/Employee';
 import Corporate from './pages/Corporate';
 import Doctor from './pages/Doctor';
 import NavBar from './components/Common/NavBar';
 import Profile from './pages/Profile';
+import Promotions from './pages/Promotions';
 import ContactUs from './pages/ContactUs';
 import Error from './pages/Error';
 import Test from './pages/test';
 import Footer from './components/Common/Footer'
 import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
+import Articles from './pages/Articles';
 
 const theme = createTheme({
   palette: {
@@ -40,8 +43,11 @@ const theme = createTheme({
 const ErrElement = <Error role={`${getRole()}`} />
 const router = createBrowserRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
+  { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
   { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
+  { errorElement: ErrElement, path: "/employee/promotions", element: <Promotions />, },
+  { errorElement: ErrElement, path: "/employee/articles", element: <Articles />, },
   { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },
   { errorElement: ErrElement, path: "/corporate", element: <Corporate />, },
   { errorElement: ErrElement, path: "/doctor", element: <Doctor />, },
