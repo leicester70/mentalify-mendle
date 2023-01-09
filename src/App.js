@@ -20,6 +20,7 @@ import Error from './pages/Error';
 import Test from './pages/test';
 import Footer from './components/Common/Footer'
 import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
+import Articles from './pages/Articles';
 
 const theme = createTheme({
   palette: {
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
   { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
   { errorElement: ErrElement, path: "/employee/promotions", element: <Promotions />, },
+  { errorElement: ErrElement, path: "/employee/articles", element: <Articles />, },
   { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },
   { errorElement: ErrElement, path: "/corporate", element: <Corporate />, },
   { errorElement: ErrElement, path: "/doctor", element: <Doctor />, },

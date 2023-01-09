@@ -4,6 +4,7 @@ import { getEmployeeData } from "../data/DataHelper";
 //  Custom Components
 import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 import PromotionCards from "../components/SimpleComponents/PromotionCards";
+import ArticleCards from "../components/SimpleComponents/ArticleCards";
 
 export default function Employees() {
     return (
@@ -47,7 +48,10 @@ export default function Employees() {
                 {/* Featured Articles */}
                 <Typography mt={20} variant="h4">Featured Articles</Typography>
                 <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
-
+                <ArticleCards renderLimit={3} />
+                <Box my={4}>
+                    <Link color='secondary' href="employee/articles">See all Articles & Blogs</Link>
+                </Box>
 
                 {/* Featured Promotion */}
                 <Typography mt={20} variant="h4">Featured Promotions</Typography>
