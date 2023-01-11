@@ -57,13 +57,15 @@ export default function () {
             <Grid container direction='column' alignContent='center' rowGap={2} paddingTop={2}>
                 <Tabs
                     centered
+                    indicatorColor="secondary"
+                    textColor="secondary"
                     value={roleValue.index}
                     onChange={handleRoleTabChange}
                     aria-label="icon position tabs example"
                     textAlign='center'
                 >
-                    <Tab icon={<HailIcon />} label="Employee" />
-                    <Tab icon={<MedicalInformationIcon />} label="Doctor" />
+                    <Tab icon={<HailIcon fontSize="large" />} label="Employee" />
+                    <Tab icon={<MedicalInformationIcon fontSize="large" />} label="Doctor" />
                 </Tabs>
                 <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect(roleValue.roleStr) }}>
                     <SingpassLoginButton role={roleValue.roleStr} />
