@@ -2,30 +2,34 @@ import { Container, Typography, Divider, Link, Grid, Button, Tabs, Tab } from "@
 import { getRole, randomMinMax } from "../Util/Helper";
 import { getEmployeeData } from "../data/DataHelper";
 import SingpassLoginButton from "../components/SimpleComponents/SingpassLoginButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HailIcon from '@mui/icons-material/Hail';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 
 
-function handleRedirect(value) {
-    let roles = ["employee", "doctor"]
+function handleRedirect(role) {
     if (!!window.sessionStorage.getItem("data")) { return }
     let avatarNumber = undefined
     let randomNumber = randomMinMax(1, 100)
     let employee = getEmployeeData(randomNumber)
     if (employee.gender == "Female") { avatarNumber = randomMinMax(1, 3) } else { avatarNumber = randomMinMax(4, 6) }
     window.sessionStorage.setItem("data", JSON.stringify({
-        role: roles[value],
+        role: role,
         avatarNumber: avatarNumber,
         employeeNumber: randomNumber
     }))
 }
 
 export default function () {
-    const [roleValue, setRoleValue] = useState(0);
+    const [roleValue, setRoleValue] = useState({ index: 0, roleStr: "employee" });
+
+    useEffect(() => {
+        window.sessionStorage.clear()
+    }, [])
 
     const handleRoleTabChange = (event, value) => {
-        setRoleValue(value);
+        let roles = ["employee", "doctor", "organization"]
+        setRoleValue({ index: value, roleStr: roles[value] });
     };
 
 
@@ -53,7 +57,7 @@ export default function () {
             <Grid container direction='column' alignContent='center' rowGap={2} paddingTop={2}>
                 <Tabs
                     centered
-                    value={roleValue}
+                    value={roleValue.index}
                     onChange={handleRoleTabChange}
                     aria-label="icon position tabs example"
                     textAlign='center'
@@ -61,8 +65,8 @@ export default function () {
                     <Tab icon={<HailIcon />} label="Employee" />
                     <Tab icon={<MedicalInformationIcon />} label="Doctor" />
                 </Tabs>
-                <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect(roleValue) }}>
-                    <SingpassLoginButton role="employee" />
+                <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect(roleValue.roleStr) }}>
+                    <SingpassLoginButton role={roleValue.roleStr} />
                 </Button>
                 {/* <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
