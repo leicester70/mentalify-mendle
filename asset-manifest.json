@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/leicester70/mentalify-mendle/static/css/main.78ab108b.css",
+    "main.js": "/leicester70/mentalify-mendle/static/js/main.0a8fce74.js",
+    "index.html": "/leicester70/mentalify-mendle/index.html",
+    "main.78ab108b.css.map": "/leicester70/mentalify-mendle/static/css/main.78ab108b.css.map",
+    "main.0a8fce74.js.map": "/leicester70/mentalify-mendle/static/js/main.0a8fce74.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78ab108b.css",
+    "static/js/main.0a8fce74.js"
+  ]
+}
