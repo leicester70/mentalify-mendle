@@ -1,0 +1,20 @@
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{0}: checkout: moving from master to development-2
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{1}: checkout: moving from dev3-backup to master
+[33m8f1ee4b[m[33m ([m[1;31morigin/dev3-backup[m[33m, [m[1;32mshit[m[33m, [m[1;32mdev3-backup[m[33m)[m HEAD@{2}: checkout: moving from master to dev3-backup
+[33m8f1ee4b[m[33m ([m[1;31morigin/dev3-backup[m[33m, [m[1;32mshit[m[33m, [m[1;32mdev3-backup[m[33m)[m HEAD@{3}: reset: moving to 8f1ee4b6f0d65eef16d6a3ed2e197c82e26a984f
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{4}: checkout: moving from development-2 to master
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{5}: rebase (finish): returning to refs/heads/development-2
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{6}: rebase (start): checkout master
+[33m8f1ee4b[m[33m ([m[1;31morigin/dev3-backup[m[33m, [m[1;32mshit[m[33m, [m[1;32mdev3-backup[m[33m)[m HEAD@{7}: checkout: moving from master to development-2
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{8}: checkout: moving from development-2 to master
+[33m8f1ee4b[m[33m ([m[1;31morigin/dev3-backup[m[33m, [m[1;32mshit[m[33m, [m[1;32mdev3-backup[m[33m)[m HEAD@{9}: checkout: moving from master to development-2
+[33mae2ba36[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment-2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/development-2[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{10}: commit (merge): whatever man
+[33m9491ca8[m HEAD@{11}: merge origin/development-2: Merge made by the 'recursive' strategy.
+[33mb586b62[m HEAD@{12}: reset: moving to b586b62c2be9e2c3c808fb6241e61c20b0b8120c
+[33m88ce5c8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{13}: reset: moving to HEAD
+[33m88ce5c8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{14}: checkout: moving from f4c04e4d05ad326562c47950a1d9211e0ab3f2b3 to master
+[33mf4c04e4[m HEAD@{15}: checkout: moving from master to f4c04e4d05ad326562c47950a1d9211e0ab3f2b3
+[33m88ce5c8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{16}: reset: moving to HEAD~
+[33ma6e1792[m HEAD@{17}: commit: fuck, go back
+[33m88ce5c8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{18}: reset: moving to 88ce5c8d9c30a0eac2428a5833f9018417fdeca5
+[33m88ce5c8[m[33m ([m[1;31morigin/development[m[33m)[m HEAD@{19}: clone: from https://github.com/leicester70/mentalify-mendle.git
