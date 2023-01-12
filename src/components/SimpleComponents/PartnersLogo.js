@@ -5,9 +5,10 @@ import { Box, display } from "@mui/system";
 export default function () {
 
     return (
-        <Grid container my={4} px={5} spacing={2} alignItems='center'
+        <Grid container my={2} p={2} spacing={2} alignItems='center'
             sx={{
-                borderRadius: 5, backgroundColor: 'white',
+                borderRadius: 5,
+                backgroundColor: 'white',
             }}>
             {
                 partnersLogoJson.map((data) => {
@@ -16,7 +17,7 @@ export default function () {
                             <img alt={data.name} src={data.imgSrc} style={{
                                 display: 'block',
                                 margin: 'auto',
-                                width: '100%',
+                                height: '7.5vh',
                                 mixBlendMode: 'multiply',
                             }} />
                         </Grid>
