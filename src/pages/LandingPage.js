@@ -1,7 +1,11 @@
-import { Container, Typography, Divider, Link, Grid, Button } from "@mui/material";
+import { Container, Typography, Divider, Link, Grid, Button, Tabs, Tab } from "@mui/material";
 import { getRole, randomMinMax } from "../Util/Helper";
 import { getEmployeeData } from "../data/DataHelper";
 import SingpassLoginButton from "../components/SimpleComponents/SingpassLoginButton";
+import { useState, useEffect } from "react";
+import HailIcon from '@mui/icons-material/Hail';
+import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
+
 
 function handleRedirect(role) {
     if (!!window.sessionStorage.getItem("data")) { return }
@@ -17,6 +21,18 @@ function handleRedirect(role) {
 }
 
 export default function () {
+    const [roleValue, setRoleValue] = useState({ index: 0, roleStr: "employee" });
+
+    useEffect(() => {
+        window.sessionStorage.clear()
+    }, [])
+
+    const handleRoleTabChange = (event, value) => {
+        let roles = ["employee", "doctor", "organization"]
+        setRoleValue({ index: value, roleStr: roles[value] });
+    };
+
+
     return (
         <Container
             maxWidth='sm'
@@ -39,8 +55,20 @@ export default function () {
                 textAlign='center'>continue as
             </Typography>
             <Grid container direction='column' alignContent='center' rowGap={2} paddingTop={2}>
-                <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect("employee") }}>
-                    <SingpassLoginButton role="employee" />
+                <Tabs
+                    centered
+                    indicatorColor="secondary"
+                    textColor="secondary"
+                    value={roleValue.index}
+                    onChange={handleRoleTabChange}
+                    aria-label="icon position tabs example"
+                    textAlign='center'
+                >
+                    <Tab icon={<HailIcon fontSize="large" />} label="Employee" />
+                    <Tab icon={<MedicalInformationIcon fontSize="large" />} label="Doctor" />
+                </Tabs>
+                <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect(roleValue.roleStr) }}>
+                    <SingpassLoginButton role={roleValue.roleStr} />
                 </Button>
                 {/* <Grid item>
                     <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
