@@ -1,6 +1,6 @@
 // Import Dependencies
-import React, { useState } from "react";
-import { Avatar, Tooltip, Container, IconButton, Typography, Grid, Chip } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Avatar, Tooltip, Container, IconButton, Typography, Grid, Chip, Switch } from "@mui/material";
 import Divider from "../components/SimpleComponents/CustomDivider";
 import { Box } from "@mui/system";
 import FemaleIcon from '@mui/icons-material/Female';
@@ -15,9 +15,13 @@ export default function () {
     // States
     const [openAvatarList, setOpenAvatarList] = useState(false);
     const [singpassStep, setSingpassStep] = useState(0);
+    const [buddySearchMode, setBuddySearchMode] = useState("Not Searching for Buddies ❌")
 
     // Data
     let employee = getEmployeeData()
+    useEffect(() => {
+
+    })
 
     // Dynamic Media
     const genderSymbol = { Female: "🌸", Male: "🍆" }
@@ -48,13 +52,24 @@ export default function () {
         return <Chip sx={{ flex: 1, color: 'white', backgroundColor: color }} size='medium' icon={icon} label={gender} />
     }
 
+    // Handler
+    function onBuddySearchSwitchChange(e, value) {
+        console.log(value)
+        if (value) {
+            setBuddySearchMode("Open to new buddies ✅")
+        } else {
+            setBuddySearchMode("Not Searching for Buddies ❌")
+        }
+    }
+
     // Render
     return (
         <Container disableGutters maxWidth="x1" sx={{
             backgroundColor: "white",
             minHeight: 1200,
+            pb: 20
         }}>
-            <Container disableGutters sx={{
+            <Container sx={{
                 paddingY: { md: 10, sx: 0 },
                 minHeight: 'fit-content'
             }}>
@@ -68,34 +83,42 @@ export default function () {
                         </IconButton>
                     </Tooltip>
                 </Box>
-                <Container maxWidth='md'>
+                <Container maxWidth='sm'>
                     {/* Name */}
-                    <Typography variant="subtitle1" textAlign='center' fontStyle='italic'>Full Name</Typography>
-                    <Typography variant="h3" textAlign='center'> {employee.firstName} {employee.lastName}</Typography>
+                    <Typography variant="subtitle2" textAlign='center' fontStyle='italic'>Full Name</Typography>
+                    <Typography variant="h4" textAlign='center' fontWeight='bold'>{employee.firstName} {employee.lastName}</Typography>
                     {/* Gender */}
-                    <Box my={2} textAlign='center'>
+                    <Box my={4} mb={15} textAlign='center'>
+                        <Typography mb={1} variant="subtitle2" textAlign='center' fontStyle='italic'>Gender</Typography>
                         <GenderBubble gender={employee.gender} />
-
                     </Box>
-                    <Divider mt={8} mb={5} />
-                    <Grid container textAlign={'center'}>
-                        <Grid item flexGrow={1} mb={5}>
-                            <Grid>
-                                <Typography variant="subtitle1" textAlign='center' fontStyle='italic'>Company</Typography>
-                                <Typography variant="h4" textAlign='center'>{employee.company}</Typography>
-                                {/* <Typography variant="h2" textAlign='center'>{parseRole(getRole())}</Typography> */}
-                            </Grid>
+                    <Typography variant="h4">Employment Details</Typography>
+                    <Divider mt={2} />
+                    <Grid container display='table-row' rowSpacing={5}>
+                        <Grid item>
+                            <Typography variant="subtitle2" fontStyle='italic'>Company</Typography>
+                            <Typography variant="h5" fontWeight='bold'>{employee.company}</Typography>
                         </Grid>
-                        <Grid item flexGrow={1} mb={5}>
-                            <Typography variant="subtitle1" textAlign='center' fontStyle='italic'>Job Title</Typography>
-                            <Typography variant="h4" textAlign='center'>{employee.jobTitle}</Typography>
+                        <Grid item>
+                            <Typography variant="subtitle2" fontStyle='italic'>Job Title</Typography>
+                            <Typography variant="h5" fontWeight='bold'>{employee.jobTitle}</Typography>
                         </Grid>
                     </Grid>
+                    <Typography mt={10} variant="h4">Options</Typography>
+                    <Divider mt={2} />
+                    <Grid container display='table-row' rowSpacing={5}>
+                        <Grid item>
+                            <Typography variant="subtitle2" fontStyle='italic'>Buddy Search Mode</Typography>
+                            <Switch onChange={onBuddySearchSwitchChange} color="success" /><Typography paragraph fontWeight='bold'>{buddySearchMode}</Typography>
+                        </Grid>
+                        {/* <Grid item>
+                            <Typography variant="subtitle1" fontStyle='italic'>Job Title</Typography>
+                            <Typography variant="h5" fontWeight='bold'>{employee.jobTitle}</Typography>
+                        </Grid> */}
+                    </Grid>
                 </Container>
-                <></>
-                <Box my={10} boxShadow={5} borderRadius={10} overflow='hidden'>
-                </Box>
+
             </Container>
-        </Container>
+        </Container >
     );
 }
