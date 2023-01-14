@@ -109,7 +109,7 @@ export default function () {
                     <Grid container display='table-row' rowSpacing={5}>
                         <Grid item>
                             <Typography variant="subtitle2" fontStyle='italic'>Buddy Search Mode</Typography>
-                            <Switch onChange={onBuddySearchSwitchChange} color="success" /><Typography paragraph fontWeight='bold'>{buddySearchMode}</Typography>
+                            <Switch onChange={onBuddySearchSwitchChange} color="success" /><Typography sx={{ display: 'inline-block' }} paragraph fontWeight='bold'>{buddySearchMode}</Typography>
                         </Grid>
                         {/* <Grid item>
                             <Typography variant="subtitle1" fontStyle='italic'>Job Title</Typography>
