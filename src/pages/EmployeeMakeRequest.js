@@ -4,6 +4,7 @@ import { Typography, Divider, FormControl, Box, TextField, Button } from "@mui/m
 import { getEmployeeData } from "../data/DataHelper";
 import Employee from "./Employee";
 import RequestBodyContent from "../components/SimpleComponents/RequestBodyContent";
+import { useEffect } from "react";
 
 const issuesCategories = [
     'Oliver Hansen',
@@ -19,6 +20,11 @@ const issuesCategories = [
 ];
 
 export default function () {
+
+    useEffect(() => {
+        window.sessionStorage.removeItem("selectedForm")
+    }, [])
+
     return (
         <Container maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',
@@ -46,7 +52,7 @@ export default function () {
                     headingText="Pair up with a Psychologist"
                     bodyText="Sample Text Body"
                     buttonText="Receive Assistance"
-                    buttonHref="/singpass-login"
+                    formSelection="psychologist"
                 >
                 </RequestBodyContent>
                 <Divider sx={{ marginY: 8 }}></Divider>
@@ -55,7 +61,7 @@ export default function () {
                     headingText="Workplace Buddies"
                     bodyText="Match with Buddies"
                     buttonText="Find a Buddy"
-                    buttonHref="/singpass-login"
+                    formSelection="buddy"
                 >
                 </RequestBodyContent>
             </Container>
