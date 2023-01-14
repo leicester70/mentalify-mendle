@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Box, Button, Container, Typography, Divider, FormControl, TextField, Select, InputLabel, MenuItem } from "@mui/material";
+import { Box, Button, Container, Typography, Divider, FormControl, TextField, Select, InputLabel, MenuItem, Switch } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { getEmployeeData } from "../../data/DataHelper";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -11,6 +11,17 @@ export const MakeRequestForm = () => {    // Doctor Form
     const [headingText, setHeadingText] = useState("");
     const [lottieSrc, setLottieSrc] = useState("");
     const [open, setOpen] = useState(false);
+    const [buddySearchMode, setBuddySearchMode] = useState("Not Searching for Buddies ❌")
+
+    // Handler
+    function onBuddySearchSwitchChange(e, value) {
+        console.log(value)
+        if (value) {
+            setBuddySearchMode("Open to new buddies ✅")
+        } else {
+            setBuddySearchMode("Not Searching for Buddies ❌")
+        }
+    }
 
     const handleClose = () => {
         setOpen(false);
@@ -35,7 +46,7 @@ export const MakeRequestForm = () => {    // Doctor Form
 
     const doctorForm =
         <Box textAlign='center'>
-            <Typography mb={5} width='md' textAlign='center' paragraph>Help us pair you up with a psychologist best suited for you by completing the form below</Typography>
+            <Typography my={5} width='md' textAlign='center' paragraph>Help us pair you up with a psychologist best suited for you by completing the form below</Typography>
             <FormControl fullWidth sx={{ maxWidth: { md: 600 }, mt: 4 }}>
                 {/* <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Subject'} value={String(getEmployeeData().firstName + getEmployeeData().lastName).toLowerCase() + "@email.com"} /> */}
                 <FormControl>
@@ -53,14 +64,25 @@ export const MakeRequestForm = () => {    // Doctor Form
         </Box>
 
     // Buddy Form
-    const buddyForm =
-        <Container>
-            <Box textAlign='center' py={5}>
-                <Typography variant="subtitile1" fontStyle='italic'>you have selected...</Typography>
-                <Typography mt={3} variant="h4" fontWeight='bold'>{headingText.toLowerCase()}</Typography>
+    const buddyForm = () => {
+        return (
+            <Box textAlign='center' pb={5}>
+                <Divider sx={{ my: 3, backgroundColor: 'grey', opacity: '35%' }} />
+                <Typography variant="subtitle2" fontStyle='italic'>Buddy Search Mode</Typography>
+                <Switch onChange={onBuddySearchSwitchChange} color="success" /><Typography sx={{ display: 'inline-block' }} paragraph fontWeight='bold'>{buddySearchMode}</Typography>
+                <Box mt={10}>
+                    <Typography mb={8} paragraph variant="subtitle2" fontStyle='italic'>Pssst! You can toggle the buddy search option under your profile settings anytime. Besure to check your inbox too for any new messages from a buddy!</Typography>
+                    <Box mx='auto' mb={2} boxShadow={3} sx={{ width: 'fit-content' }}>
+                        <img src="/guides/buddyOption.png" />
+                    </Box>
+                    <Box mx='auto' mb={4} boxShadow={3} sx={{ width: 'fit-content' }}>
+                        <img src="/guides/buddyOption1.png" />
+                    </Box>
+                </Box>
             </Box>
-        </Container>
 
+        )
+    }
     useEffect(() => {
         switch (selectedForm) {
             case "psychologist":
@@ -96,10 +118,9 @@ export const MakeRequestForm = () => {    // Doctor Form
                     </Player>
                 </Box>
                 {/* Form Heading */}
-                <Box textAlign='center' py={5}>
+                <Box textAlign='center' pt={5}>
                     <Typography variant="subtitile1" fontStyle='italic'>you have selected...</Typography>
                     <Typography mt={4} variant="h4" fontWeight='bold'>{headingText}</Typography>
-                    {/* <Divider sx={{ my: 3, backgroundColor: 'grey', opacity: '35%' }} /> */}
                 </Box>
                 {selectedFormElement}
             </Container>
