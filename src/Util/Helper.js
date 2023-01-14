@@ -1,6 +1,6 @@
 export function isNavComponent() {
     let x = window.location.href.split("/")
-    console.log(x)
+    // console.log(x)
     let navPages = [
         "employee",
         "corporate",

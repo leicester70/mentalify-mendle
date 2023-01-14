@@ -5,6 +5,7 @@ import { getEmployeeData } from "../data/DataHelper";
 import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 import PromotionCards from "../components/SimpleComponents/PromotionCards";
 import ArticleCards from "../components/SimpleComponents/ArticleCards";
+import { Dashboard } from "../components/Common/Dashboard";
 
 export default function Employees() {
     return (
@@ -21,7 +22,7 @@ export default function Employees() {
                 {/* Dashboard Stuff & Service */}
                 <Grid container>
                     <Grid container item md={8} sx={12}>
-                        <Typography padding={5} fontFamily='Century' variant="h4" fontStyle='italic'>Hello, {getEmployeeData().firstName}</Typography>
+                        <Dashboard />
                     </Grid>
                     <Grid container item md={4} sx={12}>
                         <Grid container direction='column' alignContent='left' rowGap={2} paddingTop={2}>
