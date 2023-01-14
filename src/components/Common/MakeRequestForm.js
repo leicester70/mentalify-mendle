@@ -36,16 +36,15 @@ export const MakeRequestForm = () => {    // Doctor Form
     const doctorForm =
         <Box textAlign='center'>
             <Typography mb={5} width='md' textAlign='center' paragraph>Help us pair you up with a psychologist best suited for you by completing the form below</Typography>
-            <FormControl sx={{ width: "100%", maxWidth: { md: 600 }, mt: 4 }}>
-                <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Subject'} value={String(getEmployeeData().firstName + getEmployeeData().lastName).toLowerCase() + "@email.com"} />
-                <Select aria-label="test" sx={{ mb: 2, textAlign: 'left' }}>
-                    <MenuItem value=""><em>None</em></MenuItem>
-                    {
-                        doctorFormDropSelect.map((value) => {
-                            return <MenuItem value={value}>{value.toLowerCase()}</MenuItem>
-                        })
-                    }
-                </Select>
+            <FormControl fullWidth sx={{ maxWidth: { md: 600 }, mt: 4 }}>
+                {/* <TextField sx={{ flexGrow: 1, mb: 2 }} label={'Subject'} value={String(getEmployeeData().firstName + getEmployeeData().lastName).toLowerCase() + "@email.com"} /> */}
+                <FormControl>
+                    <InputLabel id="concern">Concern</InputLabel>
+                    <Select labelId="concern" sx={{ mb: 2, textAlign: 'left' }}>
+                        <MenuItem value=""><em>None</em></MenuItem>
+                        {doctorFormDropSelect.map((value) => { return <MenuItem value={value}>{value.toLowerCase()}</MenuItem> })}
+                    </Select>
+                </FormControl>
                 <TextField inputProps={{ style: { height: 200 } }} sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} placeholder='Let us hear from you!' />
                 <Button variant="contained" color="info" sx={{ height: 65, mb: 2 }}>Submit</Button>
                 <Button startIcon={<ArrowBackIcon />} variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Cancel and return to Mendle</Button>
