@@ -1,13 +1,14 @@
-```
-I did not build this chat component, but I did referecned and modified from this article,
-https://medium.com/@awaisshaikh94/chat-component-built-with-react-and-material-ui-c2b0d9ccc491
-```
 
 // Chat.js same as Inbox or can be though of as...
 import React from 'react';
 import makeStyles from '@mui/material';
 import { Paper, Grid, Box, Divider, TextField, Typography, List, ListItem, ListItemText, ListItemIcon, Avatar, Fab } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+
+```
+I did not build this chat component, but I did referecned and modified from this article,
+https://medium.com/@awaisshaikh94/chat-component-built-with-react-and-material-ui-c2b0d9ccc491
+```
 
 // const useStyles = makeStyles({
 //     table: {
