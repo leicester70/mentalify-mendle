@@ -67,7 +67,7 @@ export const MakeRequestForm = () => {    // Doctor Form
     const buddyForm = () => {
         return (
             <Box textAlign='center' pb={5}>
-                <Divider sx={{ my: 3, backgroundColor: 'grey', opacity: '35%' }} />
+                {/* <Divider sx={{ my: 3, backgroundColor: 'grey', opacity: '15%' }} /> */}
                 <Typography variant="subtitle2" fontStyle='italic'>Buddy Search Mode</Typography>
                 <Switch onChange={onBuddySearchSwitchChange} color="success" /><Typography sx={{ display: 'inline-block' }} paragraph fontWeight='bold'>{buddySearchMode}</Typography>
                 <Box mt={10}>
