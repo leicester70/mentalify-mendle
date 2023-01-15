@@ -6,7 +6,7 @@ https://medium.com/@awaisshaikh94/chat-component-built-with-react-and-material-u
 // Chat.js same as Inbox or can be though of as...
 import React from 'react';
 import makeStyles from '@mui/material';
-import { Paper, Grid, Box, Divider, TextField, Typography, List, ListItem, ListItemText, ListItemIcon, Avatar, Fab } from '@mui/material';
+import { Container, Paper, Grid, Box, Divider, TextField, Typography, List, ListItem, ListItemText, ListItemIcon, Avatar, Fab } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 
@@ -42,36 +42,38 @@ const Chat = () => {
             </Grid>
             <Grid container component={Paper}>
                 <Grid item xs={3} >
+                    <Container sx={{ mt: 2 }}><Typography variant='subtitle1'>Doctors</Typography></Container>
                     <List>
                         <ListItem button key="RemySharp">
                             <ListItemIcon>
-                                <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
+                                <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
                             </ListItemIcon>
                             <ListItemText primary="John Wick"></ListItemText>
                         </ListItem>
                     </List>
-                    <Divider />
+                    {/* <Divider />
                     <Grid item xs={12} style={{ padding: '10px' }}>
                         <TextField id="outlined-basic-email" label="Search" variant="outlined" fullWidth />
-                    </Grid>
-                    <Divider />
+                    </Grid> */}
+                    <Divider sx={{ mb: 2 }} />
+                    <Container><Typography variant='subtitle1'>Buddies</Typography></Container>
                     <List>
                         <ListItem button key="RemySharp">
                             <ListItemIcon>
-                                <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
+                                <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
                             </ListItemIcon>
                             <ListItemText primary="Remy Sharp">Remy Sharp</ListItemText>
-                            <ListItemText secondary="online" align="right"></ListItemText>
+                            <ListItemText secondary="online 🟢" align="right"></ListItemText>
                         </ListItem>
                         <ListItem button key="Alice">
                             <ListItemIcon>
-                                <Avatar alt="Alice" src="https://material-ui.com/static/images/avatar/3.jpg" />
+                                <Avatar src="https://material-ui.com/static/images/avatar/3.jpg" />
                             </ListItemIcon>
                             <ListItemText primary="Alice">Alice</ListItemText>
                         </ListItem>
                         <ListItem button key="CindyBaker">
                             <ListItemIcon>
-                                <Avatar alt="Cindy Baker" src="https://material-ui.com/static/images/avatar/2.jpg" />
+                                <Avatar src="https://material-ui.com/static/images/avatar/2.jpg" />
                             </ListItemIcon>
                             <ListItemText primary="Cindy Baker">Cindy Baker</ListItemText>
                         </ListItem>
@@ -100,6 +102,26 @@ const Chat = () => {
                             </Grid>
                         </ListItem>
                         <ListItem key="3">
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <ListItemText align="right" primary="Cool. i am good, let's catch up!"></ListItemText>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <ListItemText align="right" secondary="10:30"></ListItemText>
+                                </Grid>
+                            </Grid>
+                        </ListItem>
+                        <ListItem key="3">
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <ListItemText align="right" primary="Cool. i am good, let's catch up!"></ListItemText>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <ListItemText align="right" secondary="10:30"></ListItemText>
+                                </Grid>
+                            </Grid>
+                        </ListItem>
+                        <ListItem>
                             <Grid container>
                                 <Grid item xs={12}>
                                     <ListItemText align="right" primary="Cool. i am good, let's catch up!"></ListItemText>
