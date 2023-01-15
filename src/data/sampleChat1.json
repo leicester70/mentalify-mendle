@@ -1,0 +1,32 @@
+[
+    {
+        "role": "doctor",
+        "message": "How are you feeling today?",
+        "": ""
+    },
+    {
+        "role": "employee",
+        "message": "I don't feel so good.",
+        "": ""
+    },
+    {
+        "role": "doctor",
+        "message": "Oh no what happened?",
+        "": ""
+    },
+    {
+        "role": "employee",
+        "message": "Work has been pilling up and it is making me feel stressed",
+        "": ""
+    },
+    {
+        "role": "employee",
+        "message": "Same here. But I took a walk and I feel more relaxed. Maybe you could try that out?",
+        "": ""
+    },
+    {
+        "role": "employee",
+        "message": "I will do that. Thank you",
+        "": ""
+    }
+]
