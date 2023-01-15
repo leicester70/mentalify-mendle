@@ -6,6 +6,7 @@ import SingleActionCard from "../components/SimpleComponents/SingleActionCard";
 import PromotionCards from "../components/SimpleComponents/PromotionCards";
 import ArticleCards from "../components/SimpleComponents/ArticleCards";
 import { Dashboard } from "../components/Common/Dashboard";
+import Chat from "../components/Chat/Chat";
 
 export default function Employees() {
     return (
@@ -17,8 +18,9 @@ export default function Employees() {
                 paddingTop: 10,
                 paddingBottom: 25,
             }}>
+                <Chat />
                 <Typography mt={5} variant="h4">Dashboard</Typography>
-                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '25%' }} />
                 {/* Dashboard Stuff & Service */}
                 <Grid container>
                     <Grid container item md={8} sx={12}>
@@ -48,7 +50,7 @@ export default function Employees() {
                 </Grid>
                 {/* Featured Articles */}
                 <Typography mt={20} variant="h4">Featured Articles</Typography>
-                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '50%' }} />
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '25%' }} />
                 <ArticleCards renderLimit={3} />
                 <Box my={4}>
                     <Link color='secondary' href="employee/articles">See all Articles & Blogs</Link>
@@ -56,7 +58,7 @@ export default function Employees() {
 
                 {/* Featured Promotion */}
                 <Typography mt={20} variant="h4">Featured Promotions</Typography>
-                <Divider sx={{ marginTop: 6, marginBottom: 8, backgroundColor: 'grey', opacity: '50%' }} />
+                <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '25%' }} />
                 <PromotionCards renderLimit={3} />
                 <Box my={4}>
                     <Link color='secondary' href="employee/promotions">See all Promotions</Link>
