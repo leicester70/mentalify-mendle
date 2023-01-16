@@ -36,12 +36,12 @@ const Chat = () => {
     return (
         <div>
             <Grid container>
-                <Grid item xs={12} >
+                <Grid item md={9} xs={12} >
                     <Typography variant="h5">Chat</Typography>
                 </Grid>
             </Grid>
             <Grid container component={Paper}>
-                <Grid item xs={3} >
+                <Grid item md={3} sx={12}>
                     <Container sx={{ mt: 2 }}><Typography variant='subtitle1'>Doctors</Typography></Container>
                     <List>
                         <ListItem button key="RemySharp">

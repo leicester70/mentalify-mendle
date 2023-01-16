@@ -1,8 +1,25 @@
-import { Container, Tab, Tabs } from "@mui/material";
-import { useState } from "react";
+import { Container, Divider, Tab, Tabs } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Dashboard } from "../components/Common/Dashboard";
+import Chat from '../components/Chat/Chat'
+import CompanyDataTable from "../components/SimpleComponents/CompanyDataTable";
 export default function () {
 
-    const [clientViewTab, setClientViewTab] = useState("dashboard")
+    const tabs = ["Dashboard", "Conversations", "Send Report"]
+    const tabElements = {
+        Dashboard: <Dashboard />,
+        Conversations: <Chat />,
+        "Send Report": <CompanyDataTable />
+    }
+    const [clientViewTab, setClientViewTab] = useState({ index: 0, tab: "dashboard", element: tabElements[tabs[0]] });
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
+
+    const handleTabChange = (event, value) => {
+        setClientViewTab({ index: value, tab: tabs[value], element: tabElements[tabs[value]] });
+    };
 
     return (
         <Container maxWidth='x1' sx={{
@@ -14,18 +31,21 @@ export default function () {
                 paddingBottom: 25,
             }}>
                 <Tabs
-                    centered
-                    indicatorColor="secondary"
-                    textColor="secondary"
-                    // value={roleValue.index}
-                    // onChange={handleRoleTabChange}
+                    sx={{ backgroundColor: 'lightgrey', width: '100%', borderRadius: 2, mb: 12 }}
+                    // centered
+                    indicatorColor="primary"
+                    textColor="primary"
+                    value={clientViewTab.index}
+                    onChange={handleTabChange}
                     aria-label="icon position tabs example"
                     textAlign='center'
                 >
-                    <Tab label="Dashboard" />
-                    <Tab label="Conversations" />
-                    <Tab label="Send Report" />
+                    {tabs.map((str) => {
+                        return <Tab label={str} />
+                    })}
                 </Tabs>
+                {/* <Divider sx={{ marginTop: 6, marginBottom: 12, backgroundColor: 'grey', opacity: '25%' }} /> */}
+                {clientViewTab.element}
             </Container>
         </Container>
     );

@@ -8,7 +8,7 @@ import { getAvatarNumber } from "../../data/DataHelper";
 export default function (props) {
 
     // we will change this later, for now it will be either blank, or static icon
-    let { pages, settings } = []
+    let pages, settings = []
     const [avatarSelect, setAvatarSelect] = React.useState("0");
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -32,7 +32,7 @@ export default function (props) {
         case "doctor":
             // pages = ["conversations", "cases", "help", "about"]
             pages = []
-            settings = [`view ${props.role} profile`]
+            // settings = [`view ${props.role} profile`]
             break
 
     }
