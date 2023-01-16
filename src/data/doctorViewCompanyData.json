@@ -1,0 +1,127 @@
+[
+    {
+        "id": 1,
+        "companyName": "Runte Group",
+        "address": "410 Grover Terrace"
+    },
+    {
+        "id": 2,
+        "companyName": "Marks-Bogan",
+        "address": "90192 Clemons Lane"
+    },
+    {
+        "id": 3,
+        "companyName": "Watsica-O'Connell",
+        "address": "6 Claremont Street"
+    },
+    {
+        "id": 4,
+        "companyName": "Kiehn, Rosenbaum and Schulist",
+        "address": "30 Eagan Street"
+    },
+    {
+        "id": 5,
+        "companyName": "Mueller, O'Hara and Stark",
+        "address": "1 2nd Point"
+    },
+    {
+        "id": 6,
+        "companyName": "Oberbrunner, McLaughlin and Cummerata",
+        "address": "913 Bay Drive"
+    },
+    {
+        "id": 7,
+        "companyName": "Medhurst, Frami and Cole",
+        "address": "453 Esch Circle"
+    },
+    {
+        "id": 8,
+        "companyName": "Larson and Sons",
+        "address": "36 Delladonna Street"
+    },
+    {
+        "id": 9,
+        "companyName": "Stanton, Abernathy and Padberg",
+        "address": "22463 Namekagon Pass"
+    },
+    {
+        "id": 10,
+        "companyName": "Langosh Inc",
+        "address": "92902 Carpenter Alley"
+    },
+    {
+        "id": 11,
+        "companyName": "Robel Group",
+        "address": "0248 Shasta Park"
+    },
+    {
+        "id": 12,
+        "companyName": "Bins-Kub",
+        "address": "989 Glendale Avenue"
+    },
+    {
+        "id": 13,
+        "companyName": "Kovacek LLC",
+        "address": "65128 Summerview Crossing"
+    },
+    {
+        "id": 14,
+        "companyName": "Greenfelder, Ward and Blanda",
+        "address": "5188 Milwaukee Drive"
+    },
+    {
+        "id": 15,
+        "companyName": "Nitzsche-Hackett",
+        "address": "95 Carberry Plaza"
+    },
+    {
+        "id": 16,
+        "companyName": "Connelly, Bauch and Kovacek",
+        "address": "9389 Waywood Road"
+    },
+    {
+        "id": 17,
+        "companyName": "Huel, Dickinson and Grady",
+        "address": "275 Homewood Park"
+    },
+    {
+        "id": 18,
+        "companyName": "Mosciski-Hintz",
+        "address": "24779 Melvin Circle"
+    },
+    {
+        "id": 19,
+        "companyName": "Walker Group",
+        "address": "456 Sycamore Terrace"
+    },
+    {
+        "id": 20,
+        "companyName": "Feil, Douglas and Lowe",
+        "address": "5 Kenwood Pass"
+    },
+    {
+        "id": 21,
+        "companyName": "Stehr Group",
+        "address": "293 Valley Edge Court"
+    },
+    {
+        "id": 22,
+        "companyName": "Grant, Howe and Lakin",
+        "address": "720 Graedel Pass"
+    },
+    {
+        "id": 23,
+        "companyName": "Torphy, Koss and Leffler",
+        "address": "8 Kedzie Point"
+    },
+    {
+        "id": 24,
+        "companyName": "Mayert, Glover and Raynor",
+        "address": "4416 Kings Center"
+    },
+    {
+        "id": 25,
+        "companyName": "Hyatt, Tremblay and Bartoletti",
+        "address": "6405 Evergreen Alley"
+    }
+]
