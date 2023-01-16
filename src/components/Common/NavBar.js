@@ -30,7 +30,8 @@ export default function (props) {
             break
 
         case "doctor":
-            pages = ["conversations", "cases", "help", "about"]
+            // pages = ["conversations", "cases", "help", "about"]
+            pages = []
             settings = [`view ${props.role} profile`]
             break
 
