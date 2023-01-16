@@ -13,8 +13,30 @@ export default function (props) {
         lottiePlayerSrc,
         lottiePlayerHeight = 300,
         headerText,
-        bodyText
+        bodyText,
+        thisIsChat,
+        onClickHandler
     } = props
+
+    if (thisIsChat && !!onClickHandler) {
+        return (
+            <Card sx={{}}>
+                <CardActionArea onClick={onClickHandler}>
+                    <Box sx={{ backgroundColor: lottiePlayerBgColor }}>
+                        <Player autoplay loop src={lottiePlayerSrc} style={{ height: lottiePlayerHeight }}>
+                            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+                        </Player>
+                    </Box>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">{headerText}</Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {bodyText}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card >
+        )
+    }
 
     return (
         <Card sx={{}}>

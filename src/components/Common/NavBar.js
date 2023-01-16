@@ -21,6 +21,7 @@ export default function (props) {
         // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
             pages = ["conversations", "make request", "promotions", "articles"]
+            pages = ["make request", "promotions", "articles"]
             settings = [`view ${props.role} profile`]
             break
 

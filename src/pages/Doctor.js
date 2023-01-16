@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { Dashboard } from "../components/Common/Dashboard";
 import Chat from '../components/Chat/Chat'
 import CompanyDataTable from "../components/SimpleComponents/CompanyDataTable";
+import { getRole } from "../Util/Helper";
 export default function () {
 
     const tabs = ["Dashboard", "Conversations", "Send Report"]
     const tabElements = {
-        Dashboard: <Dashboard />,
+        Dashboard: <Dashboard role={getRole} />,
         Conversations: <Chat />,
         "Send Report": <CompanyDataTable />
     }
