@@ -77,7 +77,7 @@ export default function (props) {
                             })}
                         </Menu>
                     </Box>
-                    <Link underline='none' sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit'><Typography variant="h5">Mendle</Typography></Link>
+                    <Link underline='none' sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit'><Typography variant="h5">Mendle{getRole() === "doctor" ? " - Doctor's Portal" : <></>}</Typography></Link>
                     <Box sx={{ flexGrow: 15, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => {
                             let pagePath = String(page).replace(" ", "-")

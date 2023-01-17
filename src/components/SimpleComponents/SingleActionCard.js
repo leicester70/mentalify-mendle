@@ -23,7 +23,7 @@ export default function (props) {
             <Card sx={{}}>
                 <CardActionArea onClick={onClickHandler}>
                     <Box sx={{ backgroundColor: lottiePlayerBgColor }}>
-                        <Player autoplay loop src={lottiePlayerSrc} style={{ height: lottiePlayerHeight }}>
+                        <Player autoplay loop src={lottiePlayerSrc} style={{ height: lottiePlayerHeight, width: '20vw' }}>
                             <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
                         </Player>
                     </Box>

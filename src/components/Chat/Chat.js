@@ -37,7 +37,9 @@ const Chat = () => {
         <div>
             <Grid container>
                 <Grid item md={9} xs={12} >
-                    <Typography variant="h5">Chat</Typography>
+                    <Box mb={4}>
+                        <Typography variant="h4">Inbox</Typography>
+                    </Box>
                 </Grid>
             </Grid>
             <Grid container component={Paper}>
@@ -135,7 +137,7 @@ const Chat = () => {
                     <Divider />
                     <Grid container style={{ padding: '20px' }}>
                         <Grid item xs={11}>
-                            <TextField id="outlined-basic-email" label="Type Something" fullWidth />
+                            <TextField multiline id="outlined-basic-email" label="Type Something" fullWidth />
                         </Grid>
                         <Grid xs={1} align="right">
                             <Fab color="primary" aria-label="add"><SendIcon /></Fab>
