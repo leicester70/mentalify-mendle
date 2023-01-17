@@ -8,7 +8,7 @@ import { getAvatarNumber } from "../../data/DataHelper";
 export default function (props) {
 
     // we will change this later, for now it will be either blank, or static icon
-    let { pages, settings } = []
+    let pages, settings = []
     const [avatarSelect, setAvatarSelect] = React.useState("0");
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -21,6 +21,7 @@ export default function (props) {
         // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
             pages = ["conversations", "make request", "promotions", "articles"]
+            pages = ["make request", "promotions", "articles"]
             settings = [`view ${props.role} profile`]
             break
 
@@ -30,8 +31,9 @@ export default function (props) {
             break
 
         case "doctor":
-            pages = ["conversations", "cases", "help", "about"]
-            settings = [`view ${props.role} profile`]
+            // pages = ["conversations", "cases", "help", "about"]
+            pages = []
+            // settings = [`view ${props.role} profile`]
             break
 
     }

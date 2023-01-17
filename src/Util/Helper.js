@@ -5,9 +5,8 @@ export function isNavComponent() {
         "employee",
         "corporate",
         "doctor",
-        "contact-us"
     ]
-    if (x.includes(...navPages)) {
+    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2])) {
         return true
     } else return false
 }
