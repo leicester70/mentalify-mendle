@@ -1,4 +1,4 @@
-import { Divider, Typography } from "@mui/material";
+import { Link, Divider, Typography, Button } from "@mui/material";
 import { Container } from "@mui/system";
 import PartnersLogo from "../SimpleComponents/PartnersLogo";
 
@@ -36,6 +36,8 @@ export default function () {
                 */}
 
                 <Typography paragraph>2022 - 2023, Ngee Ann Polytechnic</Typography>
+                <Button size="small" href="https://github.com/leicester70/mentalify-mendle" target='_blank' variant="contained" sx={{ color: 'white', mr: 1 }}>GitHub</Button>
+                <Button size="small" href="https://github.com/leicester70/" target='_blank' variant="contained" sx={{ color: 'white' }}>🐈</Button>
             </Container>
         </Container>
     );
