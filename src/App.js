@@ -24,7 +24,7 @@ import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
 import Articles from './pages/Articles';
 import { MakeRequestForm } from './components/Common/MakeRequestForm';
 
-const theme = createHashRouter({
+const theme = createTheme({
   palette: {
     type: 'light',
     primary: { main: '#263238', },
