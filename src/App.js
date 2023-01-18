@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider, Typography, createTheme } from '@mui/material';
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import { isNavComponent, getRole } from './Util/Helper';
@@ -23,7 +24,7 @@ import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
 import Articles from './pages/Articles';
 import { MakeRequestForm } from './components/Common/MakeRequestForm';
 
-const theme = createTheme({
+const theme = createHashRouter({
   palette: {
     type: 'light',
     primary: { main: '#263238', },
@@ -42,7 +43,7 @@ const theme = createTheme({
 });
 
 const ErrElement = <Error role={`${getRole()}`} />
-const router = createBrowserRouter([
+const router = createHash([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
   { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
