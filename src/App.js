@@ -22,7 +22,6 @@ import Footer from './components/Common/Footer'
 import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
 import Articles from './pages/Articles';
 import { MakeRequestForm } from './components/Common/MakeRequestForm';
-import { basename } from 'node:path/win32';
 
 const theme = createTheme({
   palette: {
@@ -43,7 +42,7 @@ const theme = createTheme({
 });
 
 const ErrElement = <Error role={`${getRole()}`} />
-const router = createBrowserRouter(basename, [
+const router = createBrowserRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
   { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
