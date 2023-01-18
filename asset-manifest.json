@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.4303e293.css",
-    "main.js": "/static/js/main.b65b136a.js",
-    "index.html": "/index.html",
-    "main.4303e293.css.map": "/static/css/main.4303e293.css.map",
-    "main.b65b136a.js.map": "/static/js/main.b65b136a.js.map"
+    "main.css": "/mentalify-mendle/static/css/main.4303e293.css",
+    "main.js": "/mentalify-mendle/static/js/main.b65b136a.js",
+    "index.html": "/mentalify-mendle/index.html",
+    "main.4303e293.css.map": "/mentalify-mendle/static/css/main.4303e293.css.map",
+    "main.b65b136a.js.map": "/mentalify-mendle/static/js/main.b65b136a.js.map"
   },
   "entrypoints": [
     "static/css/main.4303e293.css",
