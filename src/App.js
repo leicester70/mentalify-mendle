@@ -43,7 +43,7 @@ const theme = createHashRouter({
 });
 
 const ErrElement = <Error role={`${getRole()}`} />
-const router = createHash([
+const router = createHashRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
   { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
