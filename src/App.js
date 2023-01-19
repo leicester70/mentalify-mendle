@@ -58,40 +58,43 @@ const theme = createTheme({
 
 function App() {
   const [appCurrentPath, setAppCurrentPath] = useState("/");
-  const [appCurrentELement, setAppCurrentElement] = useState(<LandingPage appPathSetter={setAppCurrentPath} />)
   const [appRole, setAppRole] = useState(undefined);
 
-  useEffect(() => {
+  useEffect((appCurrentPath) => {
     console.log("😍")
     console.log(appCurrentPath)
-    console.log(appCurrentELement)
     console.log(appRole)
-    if (appCurrentPath === "/" + window.location.href.split("/")) { return }
+  })
+
+  const appBody = () => {
     switch (appCurrentPath) {
       // Landing Page & Sign In
       case "/":
-        setAppCurrentElement(<LandingPage appPathSetter={setAppCurrentPath} />);
-        break;
+        window.sessionStorage.clear()
+        return (<LandingPage appPathSetter={setAppCurrentPath} />);
 
       case "singpass-login":
-        setAppCurrentElement(<SingpassFakePage appPathSetter={setAppCurrentPath} />);
-        break;
+        return (<SingpassFakePage appPathSetter={setAppCurrentPath} />);
 
       case "employee":
-        setAppCurrentElement(<Employee appPathSetter={setAppCurrentPath} />);
-        break;
+        return (<Employee appPathSetter={setAppCurrentPath} />);
+      case "doctor":
+
+        return (<Doctor appPathSetter={setAppCurrentPath} />);
+
+      case "contact-us":
+        return (<ContactUs appPathSetter={setAppCurrentPath} role={getRole()} />);
 
       default:
-        setAppCurrentElement(<Error role={getRole()} />)
-        break;
+        return (<Error role={getRole()} />)
     }
-  })
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <Typography>
-        {isNavComponent(appCurrentPath) ? <NavBar role={getRole()} /> : null}
-        {appCurrentELement}
+        {isNavComponent(appCurrentPath) ? <NavBar appPathSetter={appCurrentPath} role={getRole()} /> : null}
+        {appBody()}
         {isNavComponent(appCurrentPath) ? <Footer /> : null}
       </Typography>
     </ThemeProvider>

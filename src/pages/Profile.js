@@ -19,9 +19,7 @@ export default function () {
 
     // Data
     let employee = getEmployeeData()
-    useEffect(() => {
 
-    })
 
     // Dynamic Media
     const genderSymbol = { Female: "🌸", Male: "🍆" }

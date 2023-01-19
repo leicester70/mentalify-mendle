@@ -5,8 +5,10 @@ import {
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { getEmployeeData } from "../data/DataHelper";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { getRole } from "../Util/Helper";
 
 export default function (props) {
+    const { appPathSetter } = props;
     return (
         <Container maxWidth='x1' sx={{
             // paddingY: 20,
@@ -36,7 +38,7 @@ export default function (props) {
                     <TextField sx={{ flexGrow: 1, mb: 4 }} multiline label={'Message'} placeholder='Let us hear from you!' />
                     {/* <Divider sx={{ marginY: 3 }}></Divider> */}
                     <Button variant="contained" color="info" sx={{ height: 65, mb: 2 }}>Submit</Button>
-                    <Button startIcon={<ArrowBackIcon />} variant="outlined" href="javascript:history.back()" sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
+                    <Button startIcon={<ArrowBackIcon />} variant="outlined" onClick={() => { appPathSetter(getRole()) }} sx={{ height: 45, fontWeight: 'light' }}>Return to Mendle</Button>
                 </FormControl>
             </Container>
         </Container >

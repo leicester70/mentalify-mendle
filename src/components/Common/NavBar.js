@@ -9,14 +9,10 @@ export default function (props) {
 
     // we will change this later, for now it will be either blank, or static icon
     let pages, settings = []
-    const [avatarSelect, setAvatarSelect] = React.useState("0");
+    const { appPathSetter } = props
+    const [avatarSelect, setAvatarSelect] = React.useState(getAvatarNumber());
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    useEffect(() => {
-        setAvatarSelect(getAvatarNumber())
-    })
-
     switch (props.role) {
         // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
@@ -45,7 +41,7 @@ export default function (props) {
     const handleCloseUserMenu = () => { setAnchorElUser(null); };
 
     return (
-        <AppBar position="sticky" className='classes.appBar'>
+        <AppBar position="relative" className='classes.appBar'>
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -73,7 +69,7 @@ export default function (props) {
                             {pages.map((page) => {
                                 let pagePath = String(page).replace(" ", "-")
                                 return (
-                                    <Link underline='none' href={`/${props.role}/${pagePath}`}><MenuItem key={page} onClick={handleCloseNavMenu}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
+                                    <Link underline='none' ><MenuItem key={page} onClick={() => { handleCloseUserMenu(); appPathSetter(`${props.role}/${pagePath}`) }}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
                             })}
                         </Menu>
                     </Box>
@@ -82,9 +78,8 @@ export default function (props) {
                         {pages.map((page) => {
                             let pagePath = String(page).replace(" ", "-")
                             return <Button Button
-                                href={`/${props.role}/${pagePath}`}
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => { handleCloseUserMenu(); appPathSetter(`${props.role}/${pagePath}`) }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {capitalizeWords(page)}
@@ -116,8 +111,8 @@ export default function (props) {
                             {settings.map((setting) => {
                                 return <Link underline='none' href={`/${getRole()}/profile`}> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
                             })}
-                            <Link underline='none' href="/contact-us" ><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
-                            <Link underline='none' href="/" onClick={() => { window.sessionStorage.removeItem("data") }}><MenuItem onClick={handleCloseUserMenu} ><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
+                            <Link underline='none' onClick={() => { handleCloseUserMenu(); appPathSetter("contact-us") }} ><MenuItem ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
+                            <Link underline='none' onClick={() => { handleCloseUserMenu(); window.location.href = "/" }} ><MenuItem><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Toolbar>

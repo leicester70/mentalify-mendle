@@ -4,7 +4,8 @@ export function isNavComponent(path) {
         "corporate",
         "doctor",
     ]
-    if (navPages.includes(path)) {
+    let x = path.split("/");
+    if (navPages.includes(path) || navPages.includes(x[0])) {
         return true
     } else return false
 }

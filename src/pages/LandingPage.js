@@ -13,10 +13,6 @@ export default function (props) {
     const { appPathSetter } = props;
     const [roleValue, setRoleValue] = useState({ index: 0, roleStr: "employee" });
 
-    useEffect(() => {
-        window.sessionStorage.clear()
-    })
-
     const handleRoleTabChange = (event, value) => {
         let roles = ["employee", "doctor", "organization"]
         setRoleValue({ index: value, roleStr: roles[value] });
@@ -33,6 +29,7 @@ export default function (props) {
             avatarNumber: avatarNumber,
             employeeNumber: randomNumber
         }))
+        appPathSetter("singpass-login");
     }
 
     return (
@@ -89,7 +86,7 @@ export default function (props) {
                                         <Tab icon={<MedicalInformationIcon fontSize="large" />} label="Doctor" />
                                     </Tabs>
                                     <Box mt={1}>
-                                        <Button padding={0} onClick={() => { handleRedirect(roleValue.roleStr); appPathSetter("singpass-login"); }}>
+                                        <Button padding={0} onClick={() => { handleRedirect(roleValue.roleStr); }}>
                                             <SingpassLoginButton role={roleValue.roleStr} />
                                         </Button>
 
