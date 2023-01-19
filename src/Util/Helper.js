@@ -1,4 +1,4 @@
-export function isNavComponent() {
+export function isNavComponent(isLoading) {
     let x = window.location.href.split("/")
     // console.log(x)
     let navPages = [
@@ -6,7 +6,7 @@ export function isNavComponent() {
         "corporate",
         "doctor",
     ]
-    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2])) {
+    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2]) && !isLoading) {
         return true
     } else return false
 }
@@ -47,4 +47,13 @@ export function parseRole(role) {
 export function randomMinMax(min, max) {
     let x = Math.random() * (max - min) + min;
     return Math.round(x)
+}
+
+
+export function getCurrentHref() {
+    let path = window.location.href;
+    path = path.split("/");
+    let result = "/" + path[path.length - 1]
+    console.log("getCurrentHref()", result)
+    return result
 }
