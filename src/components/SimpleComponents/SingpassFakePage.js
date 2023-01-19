@@ -5,9 +5,9 @@ import { useEffect } from "react";
 
 export default function (props) {
     const { appPathSetter } = props
-    let role = getRole()
+    const role = getRole()
 
-    setInterval(() => { appPathSetter("employee") },
+    setInterval(() => { appPathSetter(role) },
         randomMinMax(2200, 6000));
     return (
         <Container maxWidth='x1' sx={{

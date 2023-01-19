@@ -8,10 +8,6 @@ import { getRole } from "../../Util/Helper";
 export const Dashboard = () => {
     const [notifCount, setNotifCount] = useState(3)
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    })
-
     const welcomeHeader = () => {
         switch (getRole()) {
             case "doctor":

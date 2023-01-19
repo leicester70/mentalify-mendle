@@ -14,10 +14,6 @@ export default function () {
     }
     const [clientViewTab, setClientViewTab] = useState({ index: 0, tab: "dashboard", element: tabElements[tabs[0]] });
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    })
-
     const handleTabChange = (event, value) => {
         setClientViewTab({ index: value, tab: tabs[value], element: tabElements[tabs[value]] });
     };

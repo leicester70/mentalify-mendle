@@ -1,12 +1,10 @@
-export function isNavComponent(isLoading) {
-    let x = window.location.href.split("/")
-    // console.log(x)
+export function isNavComponent(path) {
     let navPages = [
         "employee",
         "corporate",
         "doctor",
     ]
-    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2])) {
+    if (navPages.includes(path)) {
         return true
     } else return false
 }

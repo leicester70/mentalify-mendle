@@ -59,12 +59,13 @@ const theme = createTheme({
 function App() {
   const [appCurrentPath, setAppCurrentPath] = useState("/");
   const [appCurrentELement, setAppCurrentElement] = useState(<LandingPage appPathSetter={setAppCurrentPath} />)
-  const [appRole, setAppRole] = useState('');
+  const [appRole, setAppRole] = useState(undefined);
 
   useEffect(() => {
     console.log("😍")
     console.log(appCurrentPath)
     console.log(appCurrentELement)
+    console.log(appRole)
     if (appCurrentPath === "/" + window.location.href.split("/")) { return }
     switch (appCurrentPath) {
       // Landing Page & Sign In
@@ -89,9 +90,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Typography>
-        {isNavComponent() ? <NavBar role={`${getRole()}`} /> : null}
+        {isNavComponent(appCurrentPath) ? <NavBar role={getRole()} /> : null}
         {appCurrentELement}
-        {isNavComponent() ? <Footer /> : null}
+        {isNavComponent(appCurrentPath) ? <Footer /> : null}
       </Typography>
     </ThemeProvider>
   );
