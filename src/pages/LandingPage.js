@@ -9,12 +9,13 @@ import Footer from "../components/Common/Footer";
 
 
 
-export default function () {
+export default function (props) {
+    const { appPathSetter } = props;
     const [roleValue, setRoleValue] = useState({ index: 0, roleStr: "employee" });
 
     useEffect(() => {
         window.sessionStorage.clear()
-    }, [])
+    })
 
     const handleRoleTabChange = (event, value) => {
         let roles = ["employee", "doctor", "organization"]
@@ -88,7 +89,7 @@ export default function () {
                                         <Tab icon={<MedicalInformationIcon fontSize="large" />} label="Doctor" />
                                     </Tabs>
                                     <Box mt={1}>
-                                        <Button padding={0} href="/singpass-login" onClick={() => { handleRedirect(roleValue.roleStr) }}>
+                                        <Button padding={0} onClick={() => { handleRedirect(roleValue.roleStr); appPathSetter("singpass-login"); }}>
                                             <SingpassLoginButton role={roleValue.roleStr} />
                                         </Button>
 

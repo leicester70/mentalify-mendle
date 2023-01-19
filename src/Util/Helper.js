@@ -6,7 +6,7 @@ export function isNavComponent(isLoading) {
         "corporate",
         "doctor",
     ]
-    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2]) && !isLoading) {
+    if (x.includes(navPages[0]) || x.includes(navPages[1]) || x.includes(navPages[2])) {
         return true
     } else return false
 }

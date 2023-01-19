@@ -11,7 +11,7 @@ export default function () {
         }}>
             <Typography variant="h4" mt={4} textAlign='center'>Loading</Typography>
             <Box>
-                <Player autoplay loop src="https://assets7.lottiefiles.com/packages/lf20_usmfx6bp.json" style={{ width: '12.5vw' }}>
+                <Player autoplay loop src="https://assets7.lottiefiles.com/packages/lf20_usmfx6bp.json" style={{ width: '50vw' }}>
                     <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
                 </Player>
             </Box>

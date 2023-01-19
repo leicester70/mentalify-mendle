@@ -12,17 +12,13 @@ import { getRole } from "../Util/Helper";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
-export default function Employees() {
-
+export default function Employee(props) {
+    const { appPathSetter } = props
     const [showChat, setShowChat] = useState(false);
 
     const handleInboxClick = () => {
         setShowChat(true);
     }
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    })
 
     const returnData = () => {
         if (showChat) {

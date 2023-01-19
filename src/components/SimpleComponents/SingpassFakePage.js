@@ -1,11 +1,14 @@
 import { Container, Box, Typography } from "@mui/material";
 import { getRole, randomMinMax } from "../../Util/Helper";
 import { Player, Controls } from "@lottiefiles/react-lottie-player"
+import { useEffect } from "react";
 
-export default function () {
-
+export default function (props) {
+    const { appPathSetter } = props
     let role = getRole()
-    setInterval(() => { { window.location.replace(`/${role}`); } }, randomMinMax(2200, 6000));
+
+    setInterval(() => { appPathSetter("employee") },
+        randomMinMax(2200, 6000));
     return (
         <Container maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',

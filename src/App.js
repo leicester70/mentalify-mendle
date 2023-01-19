@@ -42,48 +42,56 @@ const theme = createTheme({
   },
 });
 
-const router = createHashRouter([
-  { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
-  { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
-  { errorElement: ErrElement, path: "/employee", element: <Employee />, },
-  { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
-  { errorElement: ErrElement, path: "/employee/promotions", element: <Promotions />, },
-  { errorElement: ErrElement, path: "/employee/articles", element: <Articles />, },
-  { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },
-  { errorElement: ErrElement, path: "/employee/make-request/form", element: <MakeRequestForm />, },
-  { errorElement: ErrElement, path: "/corporate", element: <Corporate />, },
-  { errorElement: ErrElement, path: "/doctor", element: <Doctor />, },
-  { errorElement: ErrElement, path: "/contact-us", element: <ContactUs role={`${getRole()}`} />, },
-]);
+// const router = createHashRouter([
+//   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
+//   { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
+//   { errorElement: ErrElement, path: "/employee", element: <Employee />, },
+//   { errorElement: ErrElement, path: "/employee/profile", element: <Profile />, },
+//   { errorElement: ErrElement, path: "/employee/promotions", element: <Promotions />, },
+//   { errorElement: ErrElement, path: "/employee/articles", element: <Articles />, },
+//   { errorElement: ErrElement, path: "/employee/make-request", element: <EmployeeMakeRequest />, },
+//   { errorElement: ErrElement, path: "/employee/make-request/form", element: <MakeRequestForm />, },
+//   { errorElement: ErrElement, path: "/corporate", element: <Corporate />, },
+//   { errorElement: ErrElement, path: "/doctor", element: <Doctor />, },
+//   { errorElement: ErrElement, path: "/contact-us", element: <ContactUs role={`${getRole()}`} />, },
+// ]);
 
 function App() {
-  const [appCurrentPage, setAppCurrentPage] = useState({ path: getCurrentHref(), element: <Loading />, isLoading: true });
+  const [appCurrentPath, setAppCurrentPath] = useState("/");
+  const [appCurrentELement, setAppCurrentElement] = useState(<LandingPage appPathSetter={setAppCurrentPath} />)
   const [appRole, setAppRole] = useState('');
 
   useEffect(() => {
-    if (appCurrentPage.path === "/" + window.location.href.split("/")) { return }
-    switch (appCurrentPage.path) {
+    console.log("😍")
+    console.log(appCurrentPath)
+    console.log(appCurrentELement)
+    if (appCurrentPath === "/" + window.location.href.split("/")) { return }
+    switch (appCurrentPath) {
       // Landing Page & Sign In
       case "/":
-        setAppCurrentPage({ path: "/", element: <LandingPage /> });
+        setAppCurrentElement(<LandingPage appPathSetter={setAppCurrentPath} />);
         break;
 
-      case "/singpass-login":
-        setAppCurrentPage({ path: "/", element: <SingpassFakePage /> });
+      case "singpass-login":
+        setAppCurrentElement(<SingpassFakePage appPathSetter={setAppCurrentPath} />);
+        break;
+
+      case "employee":
+        setAppCurrentElement(<Employee appPathSetter={setAppCurrentPath} />);
         break;
 
       default:
-        setAppCurrentPage({ path: '/error', element: <Error role={getRole()} /> })
+        setAppCurrentElement(<Error role={getRole()} />)
         break;
     }
-  }, [])
+  })
 
   return (
     <ThemeProvider theme={theme}>
       <Typography>
-        {isNavComponent(appCurrentPage.isLoading) ? <NavBar role={`${getRole()}`} /> : null}
-        {appCurrentPage.element}
-        {isNavComponent(appCurrentPage.isLoading) ? <Footer /> : null}
+        {isNavComponent() ? <NavBar role={`${getRole()}`} /> : null}
+        {appCurrentELement}
+        {isNavComponent() ? <Footer /> : null}
       </Typography>
     </ThemeProvider>
   );
