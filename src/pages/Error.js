@@ -1,19 +1,23 @@
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Button, Container, Typography } from "@mui/material";
 import { padding } from "@mui/system";
+import { redirect } from "react-router-dom";
 
 export default function (props) {
     const { role } = props
     console.log(role)
-    let redirect = "";
-    switch (role) {
-        case "undefined":
-            redirect = "/"
-            break;
 
-        default:
-            redirect = `/${props.role}`
-            break;
+    function redirect(role) {
+        if (!role) return ("/")
+        switch (role) {
+            case "undefined":
+                redirect = "/"
+                return (redirect)
+
+            default:
+                redirect = `/${props.role}`
+                return (redirect)
+        }
     }
     return (
         <Container maxWidth='X1' sx={{
@@ -30,7 +34,7 @@ export default function (props) {
                 <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
             </Player>
             <Typography marginY={5}>We can't find the page you've requested for...</Typography>
-            <Button variant="contained" href={redirect} size='large'><Typography>Return to Mendle</Typography></Button>
+            <Button variant="contained" href={redirect(role)} size='large'><Typography>Return to Mendle</Typography></Button>
         </Container>
     );
 }

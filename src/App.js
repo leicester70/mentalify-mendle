@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider, Typography, createTheme } from '@mui/material';
 import {
   createBrowserRouter,
   createHashRouter,
   RouterProvider,
 } from "react-router-dom";
-import { isNavComponent, getRole } from './Util/Helper';
+import { isNavComponent, getRole, getCurrentHref } from './Util/Helper';
 
 // import Pages
 import LandingPage from './pages/LandingPage';
@@ -18,11 +18,11 @@ import Profile from './pages/Profile';
 import Promotions from './pages/Promotions';
 import ContactUs from './pages/ContactUs';
 import Error from './pages/Error';
-import Test from './pages/test';
 import Footer from './components/Common/Footer'
 import EmployeeMakeRequest from './pages/EmployeeMakeRequest';
 import Articles from './pages/Articles';
 import { MakeRequestForm } from './components/Common/MakeRequestForm';
+import Loading from './pages/Loading';
 
 const theme = createTheme({
   palette: {
@@ -42,7 +42,6 @@ const theme = createTheme({
   },
 });
 
-const ErrElement = <Error role={`${getRole()}`} />
 const router = createHashRouter([
   { errorElement: ErrElement, path: "/", element: <LandingPage />, index: true, },
   { errorElement: ErrElement, path: "/singpass-login", element: <SingpassFakePage />, },
@@ -58,12 +57,33 @@ const router = createHashRouter([
 ]);
 
 function App() {
+  const [appCurrentPage, setAppCurrentPage] = useState({ path: getCurrentHref(), element: <Loading />, isLoading: true });
+  const [appRole, setAppRole] = useState('');
+
+  useEffect(() => {
+    if (appCurrentPage.path === "/" + window.location.href.split("/")) { return }
+    switch (appCurrentPage.path) {
+      // Landing Page & Sign In
+      case "/":
+        setAppCurrentPage({ path: "/", element: <LandingPage /> });
+        break;
+
+      case "/singpass-login":
+        setAppCurrentPage({ path: "/", element: <SingpassFakePage /> });
+        break;
+
+      default:
+        setAppCurrentPage({ path: '/error', element: <Error role={getRole()} /> })
+        break;
+    }
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <Typography>
-        {isNavComponent() ? <NavBar role={`${getRole()}`} /> : null}
-        <RouterProvider router={router} />
-        {isNavComponent() ? <Footer /> : null}
+        {isNavComponent(appCurrentPage.isLoading) ? <NavBar role={`${getRole()}`} /> : null}
+        {appCurrentPage.element}
+        {isNavComponent(appCurrentPage.isLoading) ? <Footer /> : null}
       </Typography>
     </ThemeProvider>
   );

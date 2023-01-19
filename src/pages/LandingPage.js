@@ -8,18 +8,6 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import Footer from "../components/Common/Footer";
 
 
-function handleRedirect(role) {
-    if (!!window.sessionStorage.getItem("data")) { return }
-    let avatarNumber = undefined
-    let randomNumber = randomMinMax(1, 100)
-    let employee = getEmployeeData(randomNumber)
-    if (employee.gender == "Female") { avatarNumber = randomMinMax(1, 3) } else { avatarNumber = randomMinMax(4, 6) }
-    window.sessionStorage.setItem("data", JSON.stringify({
-        role: role,
-        avatarNumber: avatarNumber,
-        employeeNumber: randomNumber
-    }))
-}
 
 export default function () {
     const [roleValue, setRoleValue] = useState({ index: 0, roleStr: "employee" });
@@ -33,6 +21,18 @@ export default function () {
         setRoleValue({ index: value, roleStr: roles[value] });
     };
 
+    function handleRedirect(role) {
+        if (!!window.sessionStorage.getItem("data")) { return }
+        let avatarNumber = undefined
+        let randomNumber = randomMinMax(1, 100)
+        let employee = getEmployeeData(randomNumber)
+        if (employee.gender == "Female") { avatarNumber = randomMinMax(1, 3) } else { avatarNumber = randomMinMax(4, 6) }
+        window.sessionStorage.setItem("data", JSON.stringify({
+            role: role,
+            avatarNumber: avatarNumber,
+            employeeNumber: randomNumber
+        }))
+    }
 
     return (
         <>
@@ -54,7 +54,6 @@ export default function () {
                                 <Typography variant="subtitle1">
                                     We are dedicated to providing employees with the support and resources they need to maintain a healthy and productive work environment. Our system delivers comprehensive mental health services, including assessment, diagnosis, treatment, and ongoing support, in order to promote wellness and reduce the risk of mental health issues. We strive to provide a safe and supportive environment for employees to access the care they need. Through our system, we are committed to helping employees achieve optimal mental health and well-being. Contact us today to learn more about our services and how we can help.
                                 </Typography>
-                                {/* <img src="https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" /> */}
                             </Box>
                         </Container>
 
@@ -94,21 +93,6 @@ export default function () {
                                         </Button>
 
                                     </Box>
-                                    {/* <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/employee" onClick={() => { handleRedirect("employee") }}>
-                        <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Inidividual/Employee</Typography>
-                        </Button>
-                    </Grid> */}
-                                    {/* <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/corporate" onClick={() => { handleRedirect("corporate") }}>
-                        <Typography fontSize={13} letterSpacing={2} variant="subtitle1">Corporate Entity</Typography>
-                    </Button>
-                </Grid> */}
-                                    {/* <Grid item>
-                    <Button fullWidth variant="contained" color="primary" href="/doctor"
-                    onClick={() => { handleRedirect("doctor") }}
-                    ><Typography fontSize={13} letterSpacing={2} variant="subtitle1">Medical Professional</Typography></Button>
-                </Grid> */}
                                 </Grid>
                             </Box >
                         </Container>
