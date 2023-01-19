@@ -47,7 +47,7 @@ export default function () {
                 }}>
                     <Typography id="modal-modal-title" variant="h4" mt={6} my={3}>Review</Typography>
                     <Grid container rowSpacing={2} columnSpacing={2}>
-                        <Grid item md={5} sx={12}>
+                        <Grid item md={5} sm={12}>
                             <Box pb={2}>
                                 <Typography variant="h5" fontWeight='bold'>Introduction</Typography>
                                 <Typography paragraph>
@@ -84,10 +84,11 @@ export default function () {
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid item md={7} sx={12}>
+                        <Grid item md={7} sm={12}>
                             <img style={{
                                 display: 'block',
-                                width: '100%',
+                                margin: 'auto',
+                                width: '95%',
                             }} src="/doctor/companyReport_graphOnly.jpg" />
                         </Grid>
                         <Grid item sx={12} my={3}>

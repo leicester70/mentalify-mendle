@@ -43,7 +43,7 @@ const Chat = () => {
                 </Grid>
             </Grid>
             <Grid container component={Paper}>
-                <Grid item md={3} sx={12}>
+                <Grid item md={3} sm={12}>
                     <Container sx={{ mt: 2 }}><Typography variant='subtitle1'>Doctors</Typography></Container>
                     <List>
                         <ListItem button key="RemySharp">
@@ -60,7 +60,7 @@ const Chat = () => {
                     <Divider sx={{ mb: 2 }} />
                     <Container><Typography variant='subtitle1'>Buddies</Typography></Container>
                     <List>
-                        <ListItem button key="RemySharp">
+                        <ListItem button key="RemySharp" sx={{ backgroundColor: "lightgray" }}>
                             <ListItemIcon>
                                 <Avatar src="https://material-ui.com/static/images/avatar/1.jpg" />
                             </ListItemIcon>
@@ -81,7 +81,8 @@ const Chat = () => {
                         </ListItem>
                     </List>
                 </Grid>
-                <Grid item xs={9}>
+                <Grid item md={9} xs={12}>
+                    <Divider sx={{ mb: 2 }} />
                     <List>
                         <ListItem key="1">
                             <Grid container>
