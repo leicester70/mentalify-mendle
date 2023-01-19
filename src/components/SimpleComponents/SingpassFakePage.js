@@ -7,11 +7,12 @@ export default function () {
     let role = getRole()
     setInterval(() => { { window.location.replace(`/${role}`); } }, randomMinMax(2200, 6000));
     return (
-        <Container disableGutters maxWidth='x1' sx={{
+        <Container maxWidth='x1' sx={{
             backgroundColor: 'rgba(255, 255, 255)',
             py: 7.5,
-            minHeight: 1200,
-            overflow: 'hidden'
+            minHeight: '100vh',
+            overflow: 'none',
+            position: 'absolute'
         }}>
             <Typography variant="h4" mt={4} textAlign='center'>Authenticating</Typography>
             <Box>
@@ -20,7 +21,7 @@ export default function () {
                 </Player>
             </Box>
             <Container mt={5} disableGutters sx={{ borderRadius: 5, boxShadow: 5, overflow: 'hidden' }}>
-                <img width="100%" src="/singpass/singpassBanner.png" />
+                <img width="100%" alt="" src="https://raw.githubusercontent.com/leicester70/mentalify-mendle/master/public/singpass/singapss_background_image.png" />
             </Container>
         </Container >
     );
