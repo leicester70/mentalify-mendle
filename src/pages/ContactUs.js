@@ -6,9 +6,15 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { getEmployeeData } from "../data/DataHelper";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { getRole } from "../Util/Helper";
+import { useEffect } from "react";
 
 export default function (props) {
     const { appPathSetter } = props;
+
+    useEffect(() => {
+        appPathSetter("contact-us")
+    }, [])
+
     return (
         <Container maxWidth='x1' sx={{
             // paddingY: 20,

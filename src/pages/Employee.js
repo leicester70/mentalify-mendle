@@ -37,7 +37,7 @@ export default function Employee(props) {
                     paddingTop: 10,
                     paddingBottom: 25,
                 }}>
-                    <Typography my={8} variant="h4">Dashboard</Typography>
+                    {/* <Typography my={8} variant="h4">Dashboard</Typography> */}
                     {/* Dashboard Stuff & Service */}
                     <Grid container>
                         <Grid container item sx={12}>
@@ -46,26 +46,23 @@ export default function Employee(props) {
                         <Box mb={2}>
                             {/* <Typography variant="h5" textAlign={{ md: 'left', xs: 'center' }}></Typography> */}
                         </Box>
-                        <Grid container item sx={12}>
-                            <Grid container>
+                        <Grid container direction='row' alignContent='left' columnGap={2} rowSpacing={2}>
+                            <Grid item>
+                                <SingleActionCard path='inbox'
+                                    lottiePlayerBgColor='rgb(243, 223, 209)'
+                                    lottiePlayerSrc='https://assets8.lottiefiles.com/packages/lf20_xZXFso.json'
+                                    headerText='Inbox'
+                                    bodyText="Tap or click here to view your inbox!"
+                                    thisIsChat={true} onClickHandler={handleInboxClick} />
                             </Grid>
-                            <Grid container direction='row' alignContent='left' columnGap={2}>
-                                <Grid item>
-                                    <SingleActionCard path='inbox'
-                                        lottiePlayerBgColor='rgb(243, 223, 209)'
-                                        lottiePlayerSrc='https://assets8.lottiefiles.com/packages/lf20_xZXFso.json'
-                                        headerText='Inbox'
-                                        bodyText="Tap or click here to view your inbox!"
-                                        thisIsChat={true} onClickHandler={handleInboxClick} />
-                                </Grid>
-                                <Grid item>
-                                    <SingleActionCard path='make-request'
-                                        lottiePlayerBgColor='rgb(44, 108, 156)'
-                                        lottiePlayerSrc='https://assets10.lottiefiles.com/packages/lf20_ot5gqdfc.json'
-                                        headerText='Request'
-                                        bodyText="Tap or click here to make a request. Find a psychologist, a buddy, or seek help in general."
-                                    />
-                                </Grid>
+                            <Grid item>
+                                <SingleActionCard path='make-request'
+                                    lottiePlayerBgColor='rgb(44, 108, 156)'
+                                    lottiePlayerSrc='https://assets10.lottiefiles.com/packages/lf20_ot5gqdfc.json'
+                                    headerText='Request'
+                                    bodyText="Tap or click here to make a request. Find a psychologist, a buddy, or seek help in general."
+                                    onClickHandler={null}
+                                />
                             </Grid>
                         </Grid>
                     </Grid>

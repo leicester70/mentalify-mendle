@@ -5,31 +5,30 @@ import MenuIcon from "@mui/icons-material/Menu"
 import { capitalizeWords, getRole } from "../../Util/Helper";
 import { getAvatarNumber } from "../../data/DataHelper";
 
-export default function (props) {
+export default function ({ appPathSetter, role }) {
 
     // we will change this later, for now it will be either blank, or static icon
     let pages, settings = []
-    const { appPathSetter } = props
     const [avatarSelect, setAvatarSelect] = React.useState(getAvatarNumber());
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    switch (props.role) {
+    switch (role) {
         // NOTE: All spaces in the string contained in arrays will be hypennated. E.g, "make request" > "make-request"
         case "employee":
             pages = ["conversations", "make request", "promotions", "articles"]
             pages = ["make request", "promotions", "articles"]
-            settings = [`view ${props.role} profile`]
+            settings = [`view ${role} profile`]
             break
 
         case "corporate":
             pages = ["help", "about"]
-            settings = [`view ${props.role} profile`]
+            settings = [`view ${role} profile`]
             break
 
         case "doctor":
             // pages = ["conversations", "cases", "help", "about"]
             pages = []
-            // settings = [`view ${props.role} profile`]
+            // settings = [`view ${role} profile`]
             break
 
     }
@@ -69,17 +68,17 @@ export default function (props) {
                             {pages.map((page) => {
                                 let pagePath = String(page).replace(" ", "-")
                                 return (
-                                    <Link underline='none' ><MenuItem key={page} onClick={() => { handleCloseUserMenu(); appPathSetter(`${props.role}/${pagePath}`) }}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
+                                    <Link underline='none' ><MenuItem key={page} onClick={() => { handleCloseUserMenu(); appPathSetter(`${role}/${pagePath}`) }}><Typography textAlign="center">{capitalizeWords(page)}</Typography></MenuItem></Link>)
                             })}
                         </Menu>
                     </Box>
-                    <Link underline='none' sx={{ flexGrow: 1 }} href={`/${props.role}`} color='inherit'><Typography variant="h5">Mendle{getRole() === "doctor" ? " - Doctor's Portal" : <></>}</Typography></Link>
+                    <Link underline='none' sx={{ flexGrow: 1 }} href={`/${role}`} color='inherit'><Typography variant="h5">Mendle{getRole() === "doctor" ? " - Doctor's Portal" : <></>}</Typography></Link>
                     <Box sx={{ flexGrow: 15, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => {
                             let pagePath = String(page).replace(" ", "-")
                             return <Button Button
                                 key={page}
-                                onClick={() => { handleCloseUserMenu(); appPathSetter(`${props.role}/${pagePath}`) }}
+                                onClick={() => { handleCloseUserMenu(); appPathSetter(`${role}/${pagePath}`) }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {capitalizeWords(page)}
@@ -109,10 +108,10 @@ export default function (props) {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => {
-                                return <Link underline='none' href={`/${getRole()}/profile`}> <MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
+                                return <Link underline='none' href={`/${getRole()}/profile`}><MenuItem key={setting} onClick={handleCloseUserMenu}> <Typography textAlign="center">{capitalizeWords(setting)}</Typography></MenuItem></Link>
                             })}
-                            <Link underline='none' onClick={() => { handleCloseUserMenu(); appPathSetter("contact-us") }} ><MenuItem ><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
-                            <Link underline='none' onClick={() => { handleCloseUserMenu(); window.location.href = "/" }} ><MenuItem><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
+                            <Link underline='none' onClick={() => { appPathSetter("contact-us") }} ><MenuItem onClick={handleCloseUserMenu}><Typography textAlign="center">Contact Us</Typography></MenuItem></Link>
+                            <Link underline='none' onClick={() => { appPathSetter("/") }}> <MenuItem onClick={handleCloseUserMenu}><Typography textAlign="center">Sign Out</Typography></MenuItem></Link>
                         </Menu>
                     </Box>
                 </Toolbar>

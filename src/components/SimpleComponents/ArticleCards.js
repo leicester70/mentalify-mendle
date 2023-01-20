@@ -34,7 +34,7 @@ export default function ArticleCards(props) {
                                 <CardActionArea target='_blank' href={article.articleURL}>
                                     <CardMedia component="img" height="450" image={article.imgSrc} />
                                     <CardContent sx={{ height: 200, textOverflowWrap }}>
-                                        <Typography gutterBottom variant="h5" component="div">
+                                        <Typography gutterBottom variant="h4" component="div">
                                             {article.title}
                                         </Typography>
                                         <Typography gutterBottom variant="subtitle2" fontWeight='bold' color='secondary' component="div">

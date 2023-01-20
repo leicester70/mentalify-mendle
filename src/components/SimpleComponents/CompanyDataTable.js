@@ -89,7 +89,7 @@ export default function () {
                                 display: 'block',
                                 margin: 'auto',
                                 width: '95%',
-                            }} src="/doctor/companyReport_graphOnly.jpg" />
+                            }} src="https://raw.githubusercontent.com/leicester70/mentalify-mendle/master/public/doctor/companyReport_graphOnly.jpg" />
                         </Grid>
                         <Grid item sx={12} my={3}>
                             <Typography variant="h5" fontWeight='bold'>Recommendations</Typography>

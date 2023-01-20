@@ -9,7 +9,7 @@ export default function (props) {
     useEffect(() => {
         console.log(getRole())
         setInterval(() => { appPathSetter(getRole()) },
-            randomMinMax(2200, 6000));
+            randomMinMax(2200, 1));
     }, [])
 
     return (
